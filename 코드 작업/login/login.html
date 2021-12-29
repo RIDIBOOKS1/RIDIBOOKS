@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 로그인 - 리디북스</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    
+    <header>
+        <h3> <a href="#">RIDIBOOKS</a> </h3>
+    </header>
+
+    <div class="center-box">
+        <form>
+            <input type="text" name="id" id="id" placeholder="아이디">
+            <input type="password" name="pw" id="pw" placeholder="비밀번호">
+            <div class="remember">
+                <label>
+                    <input type="checkbox" name="check" id="checkbox"> 
+                    <span>로그인 상태 유지</span>
+                </label>
+                <div class="account-box">
+                    <a href="#">아이디 찾기 ｜ </a>
+                    <a href="#">비밀번호 찾기</a>
+                </div>
+                
+            </div>
+            
+        </form>
+    
+        <div class="here">
+        <p class="id_input">! 아이디를 입력해주세요</p>
+        <p class="pw_input">! 비밀번호를 입력해주세요</p>
+        </div>
+        
+
+        <section>
+            <p class="join"><a href="#">로그인</a></p>
+            <p class="login"><a href="index.html">회원가입</a></p>
+        </section>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+        $(".join").on("click",function(){
+           
+            let idpush = $("#id").val();
+            let pwpush = $("#pw").val();
+
+             // 아이디 입력칸이 공백이라면
+            if(idpush == ""){
+                // .id_input박스 나타나기 
+                $(".id_input").css("display","block");     
+            } else if (pwpush == "") {
+                $(".pw_input").css("display","block");
+            }
+
+            // 만약 아이디를 입력했을때는 .id_input박스 사라지기
+       
+
+        });
+
+
+
+
+    </script>
+</body>
+</html>

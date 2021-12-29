@@ -1,0 +1,161 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color: #EBF6FF;
+}
+
+.center-box{
+    width: 600px;
+    margin: 0 auto;
+}
+header{
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+header h3{
+    margin-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
+    font-family: "나눔고딕" ;
+    font-weight: bold;
+    color: #1E91D9;
+    text-align: center;
+
+}
+header h3 a{
+    text-decoration: none;
+    color: #1E91D9;
+}
+
+
+form{
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 85px;
+ 
+}
+
+form input{
+    display: flex;
+    flex-direction: row;
+    width: 345px;
+    height: 50px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: white;
+    font-size: 14px;
+}
+
+form input:hover{
+    border: 1px solid #1E91D9;
+
+}
+#id{
+    border-bottom: none;
+    border-radius: 4px 4px 0 0 ;
+}
+#id:hover{
+    border-bottom: 1px solid #1E91D9;
+}
+
+#checkbox{
+    width: 15px;
+    height: 15px;
+    margin-top: 4px;
+}
+.remember{
+    display: inline-block;
+    background-color: #F7FBFF;
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    width: 345px;
+    border-radius: 0 0 4px 4px;
+ 
+}
+
+.remember label span{
+    font-size: 12px;
+    color: #6D7B8C;
+    background-color: #F7FBFF;
+
+}
+.remember label span:hover{
+    color: #1E91D9;
+    cursor: pointer;
+}
+.remember label input{
+    float: left;
+    margin-right: 5px;
+    margin-left: 6px;
+}
+.account-box{
+    float: right;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.account-box a{
+    background-color: #F7FBFF;
+    text-decoration: none;
+    color: #6D7B8C;
+}
+.account-box a:hover{
+    color: #1E91D9;
+}
+
+section .join{
+    text-align: center;
+}
+
+section .join a{
+    margin-top: 13px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 14px 150px ;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #1E91D9;
+    word-spacing: -3px;
+
+}
+
+section .login {
+    text-align: center;
+}
+
+section .login a{
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 13px 142px ;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: white;
+    color: #8c8c8c;
+    border: 1px solid #ccc;
+    word-spacing: -3px;
+
+
+}
+
+.here{
+   width: 330px;
+   margin: 0 auto;
+   color: red;
+   font-size: 12px;
+   font-weight: bold;
+   margin-top: 13px;
+
+}
+
+.id_input{
+    display: none;
+}
+.pw_input{
+    display: none;
+}
