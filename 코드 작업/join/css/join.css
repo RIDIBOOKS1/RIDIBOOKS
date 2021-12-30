@@ -48,6 +48,10 @@ form{
     border-radius: 4px;
 
 }
+#id:hover{
+    border-color: #8c8c8c;
+    
+}
 
 #pw{
     margin-top: 10px;
@@ -69,6 +73,12 @@ form{
     border-radius: 4px 4px 0 0;
     
 }
+
+#pw:hover{
+    border-color: #8c8c8c;
+    border-bottom: 1px solid #8c8c8c;
+}
+
 #pwcheck{
     display: flex;
     flex-direction: row;
@@ -81,6 +91,9 @@ form{
     font-size: 14px;
     border-radius: 0 0 4px 4px;
     
+}
+#pwcheck:hover{
+    border-color: #8c8c8c;
 }
 
 #email{
@@ -97,6 +110,10 @@ form{
     border-radius: 4px;
 }
 
+#email:hover{
+    border-color: #8c8c8c;
+}
+
 #text{
     margin-top: 10px;
     display: flex;
@@ -111,6 +128,10 @@ form{
     border-radius: 4px;
 }
 
+#text:hover{
+    border-color: #8c8c8c;
+}
+
 #birth{
     display: inline-block;
     flex-direction: row;
@@ -123,6 +144,11 @@ form{
     font-size: 14px;
     border-radius: 4px ;
 }
+
+#birth:hover{
+    border-color: #8c8c8c;
+}
+
 .year{
     display: flex;
     justify-content: space-between;
@@ -139,9 +165,20 @@ label button{
 label button:last-child{
     border-right: none;
     border-radius: 4px 0 0 4px;
+    
 }
+
+label button:last-child:hover{
+    border-color: #8c8c8c;
+    border-right: 1px solid #8c8c8c;
+}
+
 label button:first-child{
     border-radius: 0 4px 4px 0;
+}
+
+label button:first-child:hover{
+    border-color: #8c8c8c;
 }
 
 form p{
@@ -154,17 +191,61 @@ form p{
 .check-box{
     margin-top: 30px;
     border: 1px solid #ccc;
+    background: white;
+    border-radius: 5px;
+    
     
 }
+.check-box span{
+    background-color: white;
+    float: right;
+    margin-right: 8px;
+    margin-top: 3px;
+}
+
+ #all, #use, #event, #gender, #essential{
+    background :  url(../images/icons8-ok-20.png) no-repeat ;
+    margin-left: 15px;
+    margin-right: 10px;
+    border: none;
+    width: 20px;
+    height: 20px;
+    vertical-align: -5px;
+    background-color: white;
+    cursor: pointer;
+    
 
 
 
+}
+#use, #event, #gender{
+    margin-left: 30px;
+}
 
+.button_all{
+    background: white;  
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 13px;
+    cursor: pointer;
+    color:  #595959;
+    font-weight: bold;
+    border-radius: 5px;
+}
 
+.use_all, .event_all, .gender_all, .essential_all {
+    font-size: 12px;
+    background: white;  
+    cursor: pointer;
+    color:  #8c8c8c;
+    font-weight: bold;
 
-
-
-
+  
+}
+.essential_all{
+    margin-bottom: 15px;
+}
 
 
 
@@ -183,4 +264,18 @@ section .join a{
     background-color: #1E91D9;
     word-spacing: -3px;
 
+}
+
+
+.id_input, .pw_input, .email_input, .text_input{
+    font-size: 12px;
+    margin-top: 3px;
+    color: red;
+    display: none;
+}
+.id_input img, .pw_input img, .email_input img, .text_input img{
+    vertical-align: -4px;
+    width: 17px;
+    height: 17px;
+    margin-right: 4px;
 }
