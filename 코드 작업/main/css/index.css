@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    background: #1E91D9;
+}
+header .center-box{
+    width: 960px;
+    margin: 0 auto;
+}

@@ -205,6 +205,7 @@ form p{
 
  #all, #use, #event, #gender, #essential{
     background :  url(../images/icons8-ok-20.png) no-repeat ;
+    filter: opacity(0.2);
     margin-left: 15px;
     margin-right: 10px;
     border: none;
@@ -232,6 +233,7 @@ form p{
     color:  #595959;
     font-weight: bold;
     border-radius: 5px;
+    
 }
 
 .use_all, .event_all, .gender_all, .essential_all {
