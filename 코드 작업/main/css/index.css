@@ -198,7 +198,7 @@ nav ul li img{
 .slide_banner li:last-child{
     margin-left: 1%;
     filter: brightness(70%);
-
+    
 }
 
 .slide_banner img{
@@ -236,4 +236,9 @@ nav ul li img{
     position: absolute;
     top: 120px;
     left: 870px;
+}
+
+.slide-box{
+    transition: all 1s;
+    
 }

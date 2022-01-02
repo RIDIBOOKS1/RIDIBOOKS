@@ -56,11 +56,14 @@
     </nav>
 
     <section class="slide_banner">
-        <ul>
-            <li class="slide_one" ><a href="#"><img src="images/slide-1.jpg"></a></li>
-            <li class="slide_two"><a href="#"><img src="images/slide-2.jpg"></a></li>
-            <li class="slide_three"><a href="#"><img src="images/slide-3.jpg"></a></li>
-        </ul>
+        <div class="slide-box">
+            <ul>
+                <li class="slide_one" ><a href="#"><img src="images/slide-1.jpg"></a></li>
+                <li class="slide_two"><a href="#"><img src="images/slide-2.jpg"></a></li>
+                <li class="slide_three"><a href="#"><img src="images/slide-3.jpg"></a></li>
+            </ul>
+        </div>
+       
         <button type="button" class="button-back"><img src="images/left-chevron.png"></button>
         <button type="button" class="button-next"><img src="images/next (4).png"></button>
     </section>
@@ -68,7 +71,37 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+    <script>
 
+        let 지금보이는사진 = 1;
+
+        $(".button-back").on("click",function(){
+        //    만약에 지금 사진 2가 보이면 
+        //    사진 3을 보여주시고요
+        //    사진 1은 없애주세요
+        //    사진 1은 3번쨰에 나타나게 해주세요
+
+            if( 지금보이는사진 == 1){
+                $(".slide-box").css("transform","translateX(-430PX)");
+                $(".slide_three").css("filter","brightness(100%)");
+                $(".slide_two").css("filter","brightness(70%)");
+                지금보이는사진 == 지금보이는사진 + 1;
+            } 
+         
+
+         
+
+        });
+
+        $(".button-next").on("click",function(){
+            $(".slide-box").css("transform", "translateX(0px)");
+            $(".slide_two").css("filter","brightness(100%)");
+            $(".slide_three").css("filter","brightness(70%)");
+            
+
+        });
+
+    </script>
 
 </body>
 </html>
