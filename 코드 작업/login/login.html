@@ -53,16 +53,40 @@
             let idpush = $("#id").val();
             let pwpush = $("#pw").val();
 
-             // 아이디 입력칸이 공백이라면
+                // 아이디 입력칸이 공백이라면
             if(idpush == ""){
+                
                 // .id_input박스 나타나기 
-                $(".id_input").css("display","block");     
+                $(".id_input").css("display","block");    
+
+                // 비밀번호 입력칸이 공백이라면 
             } else if (pwpush == "") {
+
+                // .pw_input박스 나타나기
                 $(".pw_input").css("display","block");
             }
 
-            // 만약 아이디를 입력했을때는 .id_input박스 사라지기
-       
+            // 아이디를 입력했을떄 로그인 버튼을 눌렀다면
+            // 아이디 경고창 사라지게 해주기
+
+         
+            $.ajax({
+                url: "account/login",
+                type: "POST",
+                data: "id=" + idpush + "&pw=" + pwpush,
+                seccess: function(){
+                    location.href = "http://127.0.0.1:5500/main/index.html"
+                },
+                error: function(info){
+                    if(info.status == 404){
+                        alert("아이디 또는 비밀번호를 확인하세요 ");
+                    } else if(info.status == 400){
+                        alert("아이디 또는 비밀번호가 일치하지 않습니다");
+                     }
+
+           }
+
+        });
 
         });
 

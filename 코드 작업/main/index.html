@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 일반도서 - 리디북스</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
 <body>
 
@@ -58,50 +61,52 @@
     <section class="slide_banner">
         <div class="slide-box">
             <ul>
-                <li class="slide_one" ><a href="#"><img src="images/slide-1.jpg"></a></li>
-                <li class="slide_two"><a href="#"><img src="images/slide-2.jpg"></a></li>
-                <li class="slide_three"><a href="#"><img src="images/slide-3.jpg"></a></li>
+                <div class="post-wrapper">
+       
+                    <li class="slide_one" ><a href="#"><img src="images/slide-1.jpg"></a></li>
+                    <li class="slide_two"><a href="#"><img src="images/slide-2.jpg"></a></li>
+                    <li class="slide_three"><a href="#"><img src="images/slide-3.jpg"></a></li>
+                    <li class="slide_four" ><a href="#"><img src="images/slide-1.jpg"></a></li>
+                    <li class="slide_five"><a href="#"><img src="images/slide-2.jpg"></a></li>
+                    <li class="slide_six"><a href="#"><img src="images/slide-3.jpg"></a></li>
+                  
+                    
+                </div>
+               
             </ul>
         </div>
        
-        <button type="button" class="button-back"><img src="images/left-chevron.png"></button>
-        <button type="button" class="button-next"><img src="images/next (4).png"></button>
+        
     </section>
+
+ 
+
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
 
-        let 지금보이는사진 = 1;
-
-        $(".button-back").on("click",function(){
-        //    만약에 지금 사진 2가 보이면 
-        //    사진 3을 보여주시고요
-        //    사진 1은 없애주세요
-        //    사진 1은 3번쨰에 나타나게 해주세요
-
-            if( 지금보이는사진 == 1){
-                $(".slide-box").css("transform","translateX(-430PX)");
-                $(".slide_three").css("filter","brightness(100%)");
-                $(".slide_two").css("filter","brightness(70%)");
-                지금보이는사진 == 지금보이는사진 + 1;
-            } 
-         
-
-         
-
+        $('.post-wrapper').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        prevArrow : "<button type='button' class='slick-prev'> < </button>",        // 이전 화살표 모양 설정
+        nextArrow : "<button type='button' class='slick-next'> > </button>",  
         });
+                
 
-        $(".button-next").on("click",function(){
-            $(".slide-box").css("transform", "translateX(0px)");
-            $(".slide_two").css("filter","brightness(100%)");
-            $(".slide_three").css("filter","brightness(70%)");
-            
 
-        });
-
+       
     </script>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+
 
 </body>
 </html>

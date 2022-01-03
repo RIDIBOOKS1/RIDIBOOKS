@@ -179,35 +179,25 @@ nav ul li img{
 
 .slide_banner{
     width: 1300px;
-    margin: 30px auto;
+    margin: 40px auto;
     position: relative;
 }
 
 .slide_banner li{
     list-style: none;
-    width: 32%;
+    width: 30%;
     float: left;
+    margin-right: 0.2%;
 
-}
-.slide_banner li:first-child{
-    margin-right: 1%;
-    filter:brightness(70%)
-    
-    
-}
-.slide_banner li:last-child{
-    margin-left: 1%;
-    filter: brightness(70%);
-    
 }
 
 .slide_banner img{
     width: 100%;
     border-radius: 6px;
+
 }
 
-
-.slide_banner button{
+button{
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -215,30 +205,25 @@ nav ul li img{
     background-color: #ccc;
     opacity: 0.6;
     cursor: pointer;
+    position: absolute;
+}
+
+
+.slick-prev{
+   
+    top: 40%;
+    right: 69%;
+    z-index: 999;
+}
+
+.slick-next{
+ 
+    top: 40%;
+    right: 29%;
 }
 
 .slide_banner button:hover{
     opacity: 0.8;
 }
 
-.button-back{
-    position: absolute;
-    top: 120px;
-    left: 360px;
-}
 
-.slide_banner button img{
-    width: 20px;
-    height: 20px;
-}
-
-.button-next{
-    position: absolute;
-    top: 120px;
-    left: 870px;
-}
-
-.slide-box{
-    transition: all 1s;
-    
-}
