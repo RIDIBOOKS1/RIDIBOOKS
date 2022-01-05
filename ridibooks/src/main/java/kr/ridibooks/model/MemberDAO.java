@@ -25,4 +25,11 @@ public class MemberDAO {
 			session.close(); // ¹Ý³³
 			return cnt;
 		}
+		
+		public String memberLogin(MemberVO vo) {
+			   SqlSession session=sqlSessionFactory.openSession();
+			   String id = session.selectOne("memberLogin", vo);
+			   session.close();
+			   return id;
+		   }
 }

@@ -34,7 +34,6 @@ public class FrontController extends HttpServlet {
 		// forward, redirect
 		if(nextPage!=null) {
 			if(nextPage.indexOf("redirect:")!=-1) {
-				//            redirect:/MVC04/memberList.do
 				response.sendRedirect(nextPage.split(":")[1]); // redirect
 			}else {
 				RequestDispatcher rd=request.getRequestDispatcher(ViewResolver.makeView(nextPage)); // forward

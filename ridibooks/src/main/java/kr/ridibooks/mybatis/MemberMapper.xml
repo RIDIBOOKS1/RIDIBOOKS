@@ -19,4 +19,8 @@
         #{personal}
         )       
     </insert>
+    
+    <select id="memberLogin" parameterType="memberVO" resultType="String">
+        select id from member where id=#{id} and pass=#{pass}
+    </select>
 </mapper>
