@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import kr.ridibooks.model.MemberDAO;
 import kr.ridibooks.model.MemberVO;
+import kr.ridibooks.service.MemberService;
 
 public class MemberLoginController implements Controller {
 
@@ -23,16 +24,19 @@ public class MemberLoginController implements Controller {
 		vo.setId(id);
 		vo.setPw(pw);
 		
-		MemberDAO dao = new MemberDAO();
-		String user_id = dao.memberLogin(vo);	
+		MemberService service = new MemberService();
+		String user_id = service.login(vo);
 		// 로그인 페이지 로직은 추후 작성
 		if(user_id != null && !"".equals(user_id)) {
 			// 성공
 			HttpSession session = request.getSession();
+			session.setAttribute("isLogin", true);
 			session.setAttribute("id", user_id);
+			session.setMaxInactiveInterval(600);
+			response.setStatus(HttpServletResponse.SC_OK);
 		} else {
 			// 실패
-			request.getSession().setAttribute("id", "");
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 		}
 		return "redirect:" + ctx + "/성공페이지.do";
 	}
