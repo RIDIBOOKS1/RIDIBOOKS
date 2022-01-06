@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.ridibooks.model.MemberDAO;
 import kr.ridibooks.model.MemberVO;
-import kr.ridibooks.service.MemberService;
+import kr.ridibooks.service.MemberServiceImpl;
 
 public class MemberInsertController implements Controller{
 
@@ -71,7 +71,7 @@ public class MemberInsertController implements Controller{
 		vo.setEvent(event);
 		vo.setInfo(info);
 		vo.setPersonal(personal);
-		MemberService service = new MemberService();
+		MemberServiceImpl service = new MemberServiceImpl();
 	    int cnt=service.register(vo);
 	    
 	    String nextPage=null;

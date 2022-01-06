@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import kr.ridibooks.model.MemberDAO;
 import kr.ridibooks.model.MemberVO;
-import kr.ridibooks.service.MemberService;
+import kr.ridibooks.service.MemberServiceImpl;
 
 public class MemberLoginController implements Controller {
 
@@ -24,7 +24,7 @@ public class MemberLoginController implements Controller {
 		vo.setId(id);
 		vo.setPw(pw);
 		
-		MemberService service = new MemberService();
+		MemberServiceImpl service = new MemberServiceImpl();
 		String user_id = service.login(vo);
 		// 로그인 페이지 로직은 추후 작성
 		if(user_id != null && !"".equals(user_id)) {
