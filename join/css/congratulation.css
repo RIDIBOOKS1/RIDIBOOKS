@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color: #EBF6FF;
+}
+
+.center-box{
+    width: 460px;
+    margin: 0 auto;
+}
+
+header h3{
+    margin-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
+    font-family: "나눔고딕" ;
+    font-weight: bold;
+    color: #1E91D9;
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+}
+
+
+header h3 a{
+    text-decoration: none;
+    color: #1E91D9;
+}
+
+section {
+    text-align: center;
+}
+section img{
+    width: 150px;
+    height: 150px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+section p{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+section a{
+    text-decoration: none;
+    color: white;
+    background: #1E91D9;
+    padding: 10px 150px;
+    border-radius: 4px;
+
+}
