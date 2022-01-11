@@ -177,6 +177,9 @@ nav ul li img{
     color: #1E91D9;
 }
 
+
+/* section 1 */
+
 .slide_banner{
     width: 1300px;
     margin: 40px auto;
@@ -226,29 +229,32 @@ button{
     opacity: 0.8;
 }
 
+/* section 2 */
+
 
 .list-center{
     width: 960px;
     margin: 0 auto;
 }
+
 .list-box ul{
     display: flex;
     justify-content: space-evenly;
  
-    
 }
 .list-box ul li img{
     display: block;
+    text-align: center;
+    border-radius: 10px;
 
 }
 
 .list-box ul li {
     list-style: none;
-}
-
-.list-box span {
     text-align: center;
 }
+
+
 
 .box1{
     background-color: #F2CEA2;
@@ -273,4 +279,12 @@ button{
 }
 .box9{
     background-color: #BADBA1;
+}
+
+/* section 3 */
+
+
+.new-center img {
+    width: 200px;
+    height: 200px;
 }
