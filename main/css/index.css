@@ -177,6 +177,9 @@ nav ul li img{
     color: #1E91D9;
 }
 
+
+/* section 1 */
+
 .slide_banner{
     width: 1300px;
     margin: 40px auto;
@@ -226,4 +229,62 @@ button{
     opacity: 0.8;
 }
 
+/* section 2 */
 
+
+.list-center{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.list-box ul{
+    display: flex;
+    justify-content: space-evenly;
+ 
+}
+.list-box ul li img{
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+.list-box ul li {
+    list-style: none;
+    text-align: center;
+}
+
+
+
+.box1{
+    background-color: #F2CEA2;
+}
+.box2, .box4{
+    background-color: #99D1CB;
+}
+.box3{
+    background-color: #B9BEF1;
+}
+.box5{
+    background-color: #F2C5AE;
+}
+.box6{
+    background-color: #ABDCBA;
+}
+.box7{
+    background-color: #D5ADEB;
+}
+.box8{
+    background-color: #F0B9B9;
+}
+.box9{
+    background-color: #BADBA1;
+}
+
+/* section 3 */
+
+
+.new-center img {
+    width: 200px;
+    height: 200px;
+}
