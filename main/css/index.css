@@ -235,6 +235,7 @@ button{
 .list-center{
     width: 960px;
     margin: 0 auto;
+    margin-bottom: 30px;
 }
 
 .list-box ul{
@@ -244,8 +245,9 @@ button{
 }
 .list-box ul li img{
     display: block;
-    text-align: center;
     border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 5px;
 
 }
 
@@ -253,7 +255,11 @@ button{
     list-style: none;
     text-align: center;
 }
-
+.list-box ul li a{
+    text-decoration: none;
+    color: #222;
+    font-size: 13px;
+}
 
 
 .box1{
@@ -285,6 +291,40 @@ button{
 
 
 .new-center img {
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 160px;
+}
+.new-box{
+    background-color: #222;
+}
+.new-center{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.new-center h1{
+    color: #dfdfdf;
+    padding: 30px 0 ;
+    font-size: 20px;
+}
+
+.new-center ul{
+    display: flex;
+    flex-direction: row;
+
+}
+.new-center ul li{
+    list-style: none;
+    width: 16.66%;
+    text-align: center;
+}
+.new-center ul li a{
+    text-decoration: none;
+}
+.new-center h3{
+    color: #fff;
+    font-size: 14px;
+}
+.new-center span{
+    color: #ccc;
 }
