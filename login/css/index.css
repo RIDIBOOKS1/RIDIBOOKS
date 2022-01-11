@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color: #EBF6FF;
+}
+
+.center-box{
+    width: 600px;
+    margin: 0 auto;
+}
+header{
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+header h3{
+    margin-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
+    font-family: "나눔고딕" ;
+    font-weight: bold;
+    color: #1E91D9;
+    text-align: center;
+
+}
+
+header h3 a{
+    text-decoration: none;
+    color: #1E91D9;
+}
+
+
+section{
+    text-align: center;
+}
+
+section .book{
+    display: flex;
+    justify-content: center;
+    margin-top: 115px;
+}
+section .book img{
+    width: 300px;
+    height: 230px;
+}
+
+
+section .join a{
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 14px 115px ;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #1E91D9;
+    word-spacing: -3px;
+}
+section .login a{
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 13px 142px ;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: white;
+    color: #8c8c8c;
+    border: 2px solid #ccc;
+    word-spacing: -3px;
+}
+
+section .forth a{
+    display: inline-block;
+    margin-top: 15px;
+    padding-top: 10px;
+    text-decoration: none;
+    color: #999999;
+    font-size: 13px;
+    font-weight: bold;
+    word-spacing: -2px;
+}
+section .forth a:hover{
+    color: #808080;
+}
