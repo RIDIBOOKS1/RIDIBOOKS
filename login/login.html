@@ -10,7 +10,7 @@
 <body>
     
     <header>
-        <h3> <a href="#">RIDIBOOKS</a> </h3>
+        <h3> <a href="../main/index.html">RIDIBOOKS</a> </h3>
     </header>
 
     <div class="center-box">
@@ -48,8 +48,17 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
 
+        $("#id").on("keypress",function(){
+            $(".id_input").css("display","none");
+        });
+        $("#pw").on("keypress",function(){
+            $(".pw_input").css("display","none");
+        });
+
+
         $(".join").on("click",function(){
            
+
             let idpush = $("#id").val();
             let pwpush = $("#pw").val();
 

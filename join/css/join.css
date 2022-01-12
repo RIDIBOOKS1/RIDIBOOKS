@@ -203,7 +203,7 @@ form p{
     margin-top: 3px;
 }
 
- #all, #use, #event, #gender, #essential{
+ #all, #use, #event, #gender, #essential, #All{
     background :  url(../images/icons8-ok-20.png) no-repeat ;
     filter: opacity(0.2);
     margin-left: 15px;

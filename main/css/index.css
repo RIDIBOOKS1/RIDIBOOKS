@@ -300,6 +300,7 @@ button{
 .new-center{
     width: 960px;
     margin: 0 auto;
+    position: relative;
 }
 
 .new-center h1{
@@ -328,3 +329,4 @@ button{
 .new-center span{
     color: #ccc;
 }
+

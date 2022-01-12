@@ -10,7 +10,7 @@
 <body>
     
     <header>
-        <h3><a href="#"> RIDIBOOKS</a></h3>
+        <h3><a href="../main/index.html"> RIDIBOOKS</a></h3>
     </header>
 
     <div class="center-box">
@@ -32,18 +32,18 @@
             <p>선택 입력</p>
             <div class="year">
                 <input type="text" name="birth" id="birth" placeholder="출생년도">
-                <label>
+                <label class="label">
                     <button type="button" class="female">여</button>
-                    <button type="button" class="male">남</button>
+                    <button type="button" class="male" >남</button>
                 </label>
             </div>
             
             <div class="check-box">
-                <div class="button_all"><input type="button" name="all" id="all">선택 포함 전체 약관 동의</div><br>
-                <div class="use_all"><input type="button" name="use" id="use">이용약관 동의(필수) <span>약관 보기＞ </span></div><br>
-                <div class="event_all"><input type="button" name="event" id="event">이벤트,혜택 알림 수신 동의(선택)</div><br>
-                <div class="gender_all"> <input type="button" name="gender" id="gender">성별,생년 정보 제공 동의(선택) <span>내용 확인＞</span></div><br>
-                <div class="essential_all"><input type="button" name="essential" id="essential">개인 정보 수집 및 이용 동의(필수) <span>내용 확인 ＞</span></div>
+                <div class="button_all"><input type="button" name="checkAll" id="All" class="test" >선택 포함 전체 약관 동의</div><br>
+                <div class="use_all"><input type="button" name="check" id="use" class="test">이용약관 동의(필수) <span>약관 보기＞ </span></div><br>
+                <div class="event_all"><input type="button" name="check" id="event" class="test">이벤트,혜택 알림 수신 동의(선택)</div><br>
+                <div class="gender_all"> <input type="button" name="check" id="gender" class="test">성별,생년 정보 제공 동의(선택) <span>내용 확인＞</span></div><br>
+                <div class="essential_all"><input type="button" name="check" id="essential" class="test">개인 정보 수집 및 이용 동의(필수) <span>내용 확인 ＞</span></div>
             </div>
             
         </form>
@@ -66,6 +66,45 @@
             $(".text_input").css("display", "block");
             $(".gender_input").css("display", "block");
         });
+
+
+
+      
+        $(".female").on("click",function(){
+            $(".female").css("background-color", "#78c0ed");
+            $(".male").css("background-color", "white");
+            
+        });
+
+        $(".male").on("click",function(){
+            $(".male").css("background-color", "#78c0ed");
+            $(".female").css("background-color", "white");
+           
+        });
+       
+       $(".checkAll").on("click",function(){
+        if($(".checkAll").prop("checked")){
+            $(".test").prop("checked", true);
+
+        } else{
+            $(".test").prop("checked", false);
+        }
+       });
+
+
+
+       $("#id").on("keypress",function(){
+        $(".id_input").css("display","none");
+       })
+       $("#pw").on("keypress",function(){
+        $(".pw_input").css("display","none");
+       });
+       $("#email").on("keypress",function(){
+        $(".email_input").css("display","none");
+       });
+       $("#text").on("keypress",function(){
+        $(".text_input").css("display","none");
+       });
 
     </script>
 </body>
