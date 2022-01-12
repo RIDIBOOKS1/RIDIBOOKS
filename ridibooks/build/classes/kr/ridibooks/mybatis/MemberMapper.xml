@@ -21,6 +21,10 @@
     </insert>
     
     <select id="memberLogin" parameterType="memberVO" resultType="String">
-        select id from member where id=#{id} and pass=#{pass}
+        select id from memberInfo where id=#{id} and pass=#{pass}
+    </select>
+    
+    <select id="memberFind" parameterType="String" resultType="memberVO">
+    	select * from memberInfo where id=#{id}
     </select>
 </mapper>
