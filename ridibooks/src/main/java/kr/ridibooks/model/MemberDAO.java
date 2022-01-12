@@ -27,9 +27,16 @@ public class MemberDAO {
 		}
 		
 		public String memberLogin(MemberVO vo) {
-			   SqlSession session=sqlSessionFactory.openSession();
-			   String id = session.selectOne("memberLogin", vo);
-			   session.close();
-			   return id;
-		   }
+		   SqlSession session=sqlSessionFactory.openSession();
+		   String id = session.selectOne("memberLogin", vo);
+		   session.close();
+		   return id;
+		}
+		
+		public MemberVO memberFind(String id) {
+			 SqlSession session=sqlSessionFactory.openSession();
+			 MemberVO selectedVo = session.selectOne("id", id);
+			 session.close();
+			 return selectedVo;
+		}
 }
