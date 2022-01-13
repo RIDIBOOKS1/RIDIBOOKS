@@ -30,18 +30,15 @@ CREATE TABLE IF NOT EXISTS `memberinfo` (
   `event` bit(1) NOT NULL DEFAULT b'0',
   `info` bit(1) NOT NULL DEFAULT b'0',
   `personal` bit(1) NOT NULL DEFAULT b'0',
+  `indate` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`member_num`),
   UNIQUE KEY `id` (`id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COMMENT='회원정보테이블';
 
--- 테이블 데이터 ridibooks.memberinfo:~3 rows (대략적) 내보내기
+-- 테이블 데이터 ridibooks.memberinfo:~0 rows (대략적) 내보내기
 DELETE FROM `memberinfo`;
 /*!40000 ALTER TABLE `memberinfo` DISABLE KEYS */;
-INSERT INTO `memberinfo` (`member_num`, `id`, `pw`, `email`, `name`, `birthdate`, `gender`, `agree`, `event`, `info`, `personal`) VALUES
-	(1, 'happyrich', 'happyrich', 'myloverich@gmail.com', '권리치', 2009, 'w', b'0', b'0', b'0', b'0'),
-	(2, 'victoria', 'vicky', 'mylovevictoria@gmail.com', '빅토리', 2010, 'w', b'0', b'0', b'0', b'0'),
-	(3, 'woonmyung', 'destiny', 'whenieathappy@gmail.com', '운', 2011, 'm', b'0', b'0', b'0', b'0');
 /*!40000 ALTER TABLE `memberinfo` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

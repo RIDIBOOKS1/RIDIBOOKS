@@ -1,0 +1,105 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color: #EBF6FF;
+}
+
+.center-box{
+    width: 460px;
+    margin: 0 auto;
+}
+
+header h3{
+    margin-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
+    font-family: "나눔고딕" ;
+    font-weight: bold;
+    color: #1E91D9;
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+}
+
+
+header h3 a{
+    text-decoration: none;
+    color: #1E91D9;
+}
+
+.top{
+    color: #1E91D9;
+    font-weight: bold;
+    margin-top: 62px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    word-spacing: -7px;
+    text-align: center;
+
+}
+
+form{
+    width: 330px;
+    margin: 0 auto;
+    margin-top: 15px;
+ 
+}
+
+form input{
+    display: flex;
+    flex-direction: row;
+    width: 330px;
+    height: 50px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: white;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+form input:hover{
+    border: 1px solid #1E91D9;
+
+}
+
+
+section .search{
+    text-align: center;
+}
+
+section .search a{
+    margin-top: 13px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 14px 150px ;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #1E91D9;
+
+}
+
+.view{
+    margin-top: 14px;
+}
+
+.view p{
+    font-size: 12px;
+    float: left;
+    margin-left: 80px;
+    margin-top: 4px;
+    color:  #808080;
+    word-spacing: -3px;
+}
+
+.view a{
+    margin-left: 10px;
+    font-size: 12px;
+    text-decoration: none;
+    color:  #808080;
+    font-weight: bold;
+
+}
+.view a:hover{
+    background-color:  rgba(191, 191, 191, 0.2);
+}
