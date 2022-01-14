@@ -58,6 +58,8 @@ public class MemberInsertController implements Controller{
 			personal = 0;
 		}
 		
+
+		
 		// 파라미터 검증 추후 작성 예정
 		
 		MemberVO vo = new MemberVO();

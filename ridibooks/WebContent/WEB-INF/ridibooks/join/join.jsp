@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-    <link rel="stylesheet" href="css/join.css">
+    <style><%@include file="/WEB-INF/ridibooks/join/css/join.css"%></style>
 </head>
 <body>
     
@@ -18,6 +19,7 @@
 
         <form>
             <input type="id" name="id" id="id" placeholder="아이디">
+
             <div class="id_input"><img src="images/icons8-high-importance-20.png">아이디를 입력해주세요</div>
 
             <input type="password" name="pw" id="pw" placeholder="비밀번호">
