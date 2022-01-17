@@ -25,6 +25,7 @@
     </select>
     
     <select id="memberFind" parameterType="String" resultType="memberVO">
-    	select * from memberInfo where id=#{id}
+    	select * from memberInfo where email=#{email}
     </select>
+    
 </mapper>

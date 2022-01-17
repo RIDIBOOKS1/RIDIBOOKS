@@ -23,7 +23,7 @@
         </section>
         <section>
         	<!-- 추후 아이디 두글자만 노출되게 수정 -->
-            <div class="blue"> ** </div>
+            <div class="blue"> {id} </div>
         </section>
 
         <section>

@@ -26,7 +26,7 @@ public class MemberLoginController implements Controller {
 		
 		MemberServiceImpl service = new MemberServiceImpl();
 		String user_id = service.login(vo);
-		// 로그인 페이지 로직은 추후 작성
+		
 		if(user_id != null && !"".equals(user_id)) {
 			// 성공
 			HttpSession session = request.getSession();

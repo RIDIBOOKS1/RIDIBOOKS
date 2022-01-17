@@ -34,10 +34,11 @@ public class MemberDAO {
 		   return id;
 		}
 		
-		public MemberVO memberFind(String id) {
+		public MemberVO memberFind(String email) {
 			 SqlSession session=sqlSessionFactory.openSession();
-			 MemberVO selectedVo = session.selectOne("id", id);
+			 MemberVO selectedVo = session.selectOne("memberFind", email);
 			 session.close();
 			 return selectedVo;
 		}
+		
 }

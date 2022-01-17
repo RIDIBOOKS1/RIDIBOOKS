@@ -12,78 +12,101 @@ public class MemberVO {
 	private int event;
 	private int info;
 	private int personal;
+
 	public int getMember_num() {
 		return member_num;
 	}
+
 	public void setMember_num(int member_num) {
 		this.member_num = member_num;
 	}
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getPw() {
 		return pw;
 	}
+
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public int getBirthdate() {
 		return birthdate;
 	}
+
 	public void setBirthdate(int birthdate) {
 		this.birthdate = birthdate;
 	}
+
 	public char getGender() {
 		return gender;
 	}
+
 	public void setGender(char gender) {
 		this.gender = gender;
 	}
+
 	public int getAgree() {
 		return agree;
 	}
+
 	public void setAgree(int agree) {
 		this.agree = agree;
 	}
+
 	public int getEvent() {
 		return event;
 	}
+
 	public void setEvent(int event) {
 		this.event = event;
 	}
+
 	public int getInfo() {
 		return info;
 	}
+
 	public void setInfo(int info) {
 		this.info = info;
 	}
+
 	public int getPersonal() {
 		return personal;
 	}
+
 	public void setPersonal(int personal) {
 		this.personal = personal;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "MemberVO [member_num=" + member_num + ", id=" + id + ", pw=" + pw + ", email=" + email + ", name="
 				+ name + ", birthdate=" + birthdate + ", gender=" + gender + ", agree=" + agree + ", event=" + event
 				+ ", info=" + info + ", personal=" + personal + "]";
 	}
+
 	
 }
