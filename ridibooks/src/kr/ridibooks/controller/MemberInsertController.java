@@ -23,12 +23,16 @@ public class MemberInsertController implements Controller{
 		String pwCheck = request.getParameter("pwCheck");;
 		String email = request.getParameter("email");
 		String name = request.getParameter("name");
-		int birthdate = Integer.parseInt(request.getParameter("birthdate"));
-		char gender = request.getParameter("gender").charAt(0);
+		String birthdateStr = request.getParameter("birthdate");
+		String genderStr = request.getParameter("gender");
 		String agreeStr = request.getParameter("agree");
 		String eventStr = request.getParameter("event");
 		String infoStr = request.getParameter("info");
 		String personalStr = request.getParameter("personal");
+		
+		int birthdate = Integer.parseInt(birthdateStr);
+		char gender = genderStr.charAt(0);
+		
 		int agree;
 		int event;
 		int info;
@@ -58,9 +62,26 @@ public class MemberInsertController implements Controller{
 			personal = 0;
 		}
 		
-
+		if(id == null || pw == null || pwCheck == null || email == null || name == null || birthdateStr == null || genderStr == null ||
+				agreeStr == null || personalStr == null) {
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			return null;
+		}
 		
-		// 파라미터 검증 추후 작성 예정
+		// birthdate 출생년도 1920 ~ 2008 가입 가능, 2009 ~ 2022 법정대리인 동의 필요
+		if(birthdate < 1920 || birthdate > 2008) {
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			return null;
+		}
+		if(2009 <= birthdate && birthdate <= 2002) {
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			return null;
+		}
+		
+		if (gender == '\u0000') {
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			return null;
+		}
 		
 		MemberVO vo = new MemberVO();
 		vo.setId(id);
