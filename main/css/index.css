@@ -330,3 +330,53 @@ button{
     color: #ccc;
 }
 
+.time-center{
+    width: 960px;
+    margin: 50px auto;
+}
+.time-center ul{
+    margin-top: 50px;
+}
+
+.list-buttom{
+    display: flex;
+}
+
+.list-buttom li{
+    width: 33.33%;
+    list-style: none;
+    line-height: 40px;
+    
+}
+.list-buttom li a{
+    text-decoration: none;
+    color: #222;
+    display: inline-flex;
+   
+}
+.number{
+    padding: 0 30px 0 0;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.many{
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    width: 180px;
+    margin-left: 20px;
+    
+
+}
+.Concentrate{
+    display: table-row-group;
+    font-weight: bold;
+
+}
+.pit{
+    font-size: 14px;
+    color: #222;
+}
+.solid{
+    border-bottom: none;
+}
