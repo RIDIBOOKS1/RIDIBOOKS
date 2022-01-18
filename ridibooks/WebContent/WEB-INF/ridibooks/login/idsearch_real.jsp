@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>아이디 찾기 - 리디북스</title>
     <link rel="stylesheet" href="css/idsearch.css">
+    <script type="text/javascript">
+	    function add(){
+	    	document.form1.action="<c:url value='/account/find-id.do'/>"; 
+	    	document.form1.submit();
+	     }
+    </script>
+   
 </head>
 <body>
     
@@ -19,13 +26,13 @@
             <p class="top">아이디 찾기</p>
         </section>
        
-        <form>
+        <form id="form1" name="form1" method="post">
             <input type="email" name="email" id="email" placeholder="이메일주소">
 
         </form>
 
         <section>
-            <p class="search"><a href="/ridibooks/account/find-id.do">찾기</a></p>
+            <p class="search"><a href="/ridibooks/account/find-id.do" onclick="add()">찾기</a></p>
         </section>
 
         <section class="view">
@@ -41,12 +48,12 @@
         let customer = $("#email").val();
 
         $.ajax({
-
-            url: "account/find-id",
+            url: "<c:url value='/account/find-id.do'/>",
             type: "POST",
             data: "email=" + customer,
+            // data : {"id" : id},
             success: function(){
-                location.href="http://127.0.0.1:5500/login/result.html#"
+                location.href="http://localhost/ridibooks/login/result.jsp#"
             }
 
 

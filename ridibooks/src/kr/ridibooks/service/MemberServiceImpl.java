@@ -11,14 +11,14 @@ public class MemberServiceImpl implements MemberService {
 	public int register(MemberVO vo) {
 		return dao.memberInsert(vo);
 	}
-	
-	@Override
-	public String login(MemberVO vo) {
-		return dao.memberLogin(vo);
-	}
 
 	@Override
 	public MemberVO findById(String id) {
 		return dao.memberFind(id);
+	}
+
+	@Override
+	public MemberVO login(MemberVO vo) {
+		return dao.memberLogin(vo);
 	}
 }

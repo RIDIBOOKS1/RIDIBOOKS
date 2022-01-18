@@ -25,20 +25,23 @@ public class MemberLoginController implements Controller {
 		vo.setPw(pw);
 		
 		MemberServiceImpl service = new MemberServiceImpl();
-		String user_id = service.login(vo);
+		MemberVO loginVO = service.login(vo);
 		
-		if(user_id != null && !"".equals(user_id)) {
+		System.out.println(loginVO);
+		
+		if(loginVO != null) {
 			// 성공
 			HttpSession session = request.getSession();
 			session.setAttribute("isLogin", true);
-			session.setAttribute("id", user_id);
+			session.setAttribute("id", loginVO.getId());
+			session.setAttribute("name", loginVO.getName());
 			session.setMaxInactiveInterval(600);
 			response.setStatus(HttpServletResponse.SC_OK);
 		} else {
 			// 실패
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 		}
-		return "redirect:" + ctx + "/성공페이지.do";
+		return "loginsuccess";
 	}
 
 }

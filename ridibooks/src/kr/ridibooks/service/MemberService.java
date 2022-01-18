@@ -4,6 +4,6 @@ import kr.ridibooks.model.MemberVO;
 
 public interface MemberService {
 	public int register(MemberVO vo);
-	public String login(MemberVO vo);
 	public MemberVO findById(String id);
+	public MemberVO login(MemberVO vo);
 }

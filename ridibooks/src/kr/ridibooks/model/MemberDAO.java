@@ -27,11 +27,11 @@ public class MemberDAO {
 			return cnt;
 		}
 		
-		public String memberLogin(MemberVO vo) {
+		public MemberVO memberLogin(MemberVO vo) {
 		   SqlSession session=sqlSessionFactory.openSession();
-		   String id = session.selectOne("memberLogin", vo);
+		   MemberVO searchedVO = session.selectOne("memberLogin", vo);
 		   session.close();
-		   return id;
+		   return searchedVO;
 		}
 		
 		public MemberVO memberFind(String email) {
