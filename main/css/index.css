@@ -213,18 +213,25 @@ button{
 
 
 .slick-prev{
-   
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px  #bfbfbf;
     top: 40%;
     right: 69%;
     z-index: 999;
 }
+.slick-prev:hover{
+    filter: opacity(0.8);
+}
 
 .slick-next{
- 
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px  #bfbfbf;
     top: 40%;
     right: 29%;
 }
-
+.slick-next:hover{
+    filter: opacity(0.8);
+}
 .slide_banner button:hover{
     opacity: 0.8;
 }
@@ -334,6 +341,12 @@ button{
     width: 960px;
     margin: 50px auto;
 }
+.time-center a{
+    text-decoration: none;
+    color: #222;
+    font-size: 19px;
+
+}
 .time-center ul{
     margin-top: 50px;
 }
@@ -341,6 +354,7 @@ button{
 .list-buttom{
     display: flex;
 }
+
 
 .list-buttom li{
     width: 33.33%;
@@ -371,12 +385,71 @@ button{
 .Concentrate{
     display: table-row-group;
     font-weight: bold;
+    font-size: 16px;
 
 }
+
 .pit{
     font-size: 14px;
     color: #222;
 }
 .solid{
     border-bottom: none;
+}
+
+
+
+.section-slider{
+
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .section-slider .section-wrapper{
+    width:84%;
+    height:300px;
+    margin:0px auto;
+
+}
+  .section-slider .section-wrapper .post{
+    width:300px;
+    height:350px;
+    display:inline-block;
+
+}
+.slick-prev{
+    position: absolute;
+    top: 20%;
+    left: -10%;
+
+  }
+.slick-next{
+    position: absolute;
+    top: 20%;
+    right: -2%;
+}
+.section-title{
+    margin-bottom: 50px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.post{
+    line-height: 25px;
+}
+.slow{
+    font-weight: bold;
+}
+
+
+.post img{
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+.post img:hover{
+   filter:opacity(0.7)
+}
+.post p {
+    font-size: 14px;
+    text-align: center;
+    padding-right: 60px;
 }
