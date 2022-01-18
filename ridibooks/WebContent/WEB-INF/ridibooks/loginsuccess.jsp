@@ -10,6 +10,6 @@
 로그인성공
 ${id } 아이디이신
 ${name }님
-<a href="/ridibooks/logout.do">로그아웃</a>
+<a href="/ridibooks/account/logout.do">로그아웃</a>
 </body>
 </html>
