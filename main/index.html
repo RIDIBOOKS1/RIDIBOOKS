@@ -547,35 +547,68 @@
     <footer>
         <div class="footer-center">
             <div class="footer-content">
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-
-                </ul>
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
+                <ul class="notice">
+                    <li class="sum"><a href="#" >고객센터</a></li>
+                    <li><a href="#">공지사항</a></li>
                 </ul>
 
+                <div>
+                    
+                </div>
                 <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
+                    <li><a href="#">RIDIPAPER</a></li>
+                    <li><a href="#">제휴카드</a></li>
+                    <li><a href="#">뷰어 다운로드</a></li>
+                    <li><a href="#">리디캐시 충전</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
+                    <li><a href="#">컨텐츠 제공문의</a></li>
+                    <li><a href="#">CP 사이트</a></li>
+                    <li><a href="#">사업 제휴 문의</a></li>
+                    <li><a href="#">리디셀렉트 B2B</a></li>
+                </ul>
+
+                <ul>
+                    <li><a href="#">페이스북</a></li>
+                    <li><a href="#">인스타그램</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">인재 채용</a></li>
                 </ul>
             </div>
-            <div class="footer-click"></div>
-            <div class="footer-check"></div>
+
+            <div class="footer-click"> 
+                <p><a href="#a">리디(주)사업자 정보 <img src="images/chevron.png" width="15px" height="15px"> </a> </p>
+            </div>
+            <div class="footer-up"> 
+                <p><a href="#a">리디(주)사업자 정보 <img src="images/up-arrow.png" width="15px" height="15px"> </a> </p>
+            </div>
+
+            <div class="infohide">
+                <ul class="infoshow1">
+                    <li>대표자 배기식 ｜</li>
+                    <li>사업자 등록번호 120-87-27435 ｜</li>
+                    <li>통신판매업 신고번호 제 2009-서울강남 35-02139호</li>
+                </ul>
+
+                <ul class="infoshow2">
+                    <li>이메일 help@ridi.com ｜</li>
+                    <li>대표전화 1644-0331 ｜</li>
+                    <li>주소 서울시 강남구 역삼동 702-28 어반벤치빌딩 10층(테헤란로 325)</li>
+                </ul>
+            </div>
+
+            <div class="footer-check"> 
+                <ul>
+                     <li><a href="#">ⓒRIDI Corp.</a></li>
+                    <li><a href="#">이용 약관</a> </li>
+                    <li><a href="#">개인 정보 처리 방침</a></li>
+                    <li><a href="#">청소년 보호 정책</a></li>
+                    <li><a href="#">사업자 정보 확인</a></li>
+                </ul>
+
+            </div>
 
         </div>
 
@@ -606,7 +639,26 @@
         prevArrow : "<button type='button' class='slick-prev'> < </button>",        // 이전 화살표 모양 설정
         nextArrow : "<button type='button' class='slick-next'> > </button>",
         });
-
+    </script>
+    <script>
+        $(".footer-click").on("click",function(){
+            if( $(".infohide").css("display") == "none"){
+                $(".infohide").show();
+                $(".footer-click").hide();
+                $(".footer-up").show();
+            } else {
+                $(".infohide").hide();
+            }
+        });
+        $(".footer-up").on("click",function(){
+            if( $(".infohide").css("display") == "block"){
+                $(".infohide").hide();
+                $(".footer-click").show();
+                $(".footer-up").hide();
+            } else {
+                $(".infohide").show();
+            }
+        });
 
 
     </script>
