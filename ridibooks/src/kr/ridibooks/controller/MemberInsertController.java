@@ -156,7 +156,7 @@ public class MemberInsertController implements Controller{
 		}
 		
 		// 아이디 중복 체크
-		if(service.IdDoublecheck(id)!="NO") {
+		if(service.idDoublecheck(id)!="NO") {
 			response.setStatus(409);
 			return null;
 		}

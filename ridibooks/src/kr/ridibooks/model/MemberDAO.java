@@ -58,4 +58,13 @@ public class MemberDAO {
 		   }
 		   return idDouble; // YES(Áßº¹), NO(Áßº¹¾Æ´Ô)
 	   }
+	   
+	   // È¸¿øÅ»Åð
+	   public int memberDelete(String id) {
+		   SqlSession session=sqlSessionFactory.openSession();
+		   int cnt=session.delete("memberDelete", id);
+		   session.commit();
+		   session.close();
+		   return cnt;
+	   }
 }

@@ -27,7 +27,9 @@ public class MemberLoginController implements Controller {
 		MemberServiceImpl service = new MemberServiceImpl();
 		MemberVO loginVO = service.login(vo);
 		
-		System.out.println(loginVO);
+		
+		// 이미 로그인 되어 있다면 로그인 안하기 로직도 추가하기
+		
 		
 		if(loginVO != null) {
 			// 성공

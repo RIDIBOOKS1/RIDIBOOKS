@@ -11,5 +11,6 @@
 ${id } 아이디이신
 ${name }님
 <a href="/ridibooks/account/logout.do">로그아웃</a>
+<a href="/ridibooks/account/leave.do">회원탈퇴</a>
 </body>
 </html>

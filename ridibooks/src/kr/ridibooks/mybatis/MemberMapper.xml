@@ -36,4 +36,8 @@
         select id from memberInfo where id=#{id}        
     </select>
     
+     <delete id="memberDelete" parameterType="String">  
+        delete from memberInfo where id=#{id}
+    </delete>
+    
 </mapper>

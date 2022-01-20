@@ -28,8 +28,13 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public String IdDoublecheck(String id) {
+	public String idDoublecheck(String id) {
 		return dao.memberIdDoublecheck(id);
+	}
+
+	@Override
+	public int withdrawal(String id) {
+		return dao.memberDelete(id);
 	}
 
 }

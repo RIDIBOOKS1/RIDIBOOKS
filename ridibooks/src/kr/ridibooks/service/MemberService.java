@@ -7,5 +7,6 @@ public interface MemberService {
 	public MemberVO findById(String id);
 	public MemberVO login(MemberVO vo);
 	public MemberVO findPassword(MemberVO vo);
-	public String IdDoublecheck(String id);
+	public String idDoublecheck(String id);
+	public int withdrawal(String id);
 }
