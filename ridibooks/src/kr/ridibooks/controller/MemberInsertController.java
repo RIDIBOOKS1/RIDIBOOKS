@@ -23,6 +23,12 @@ public class MemberInsertController implements Controller{
 		// ContextPath
 		String ctx=request.getContextPath();
 		
+		// 서비스 객체 연결
+		MemberServiceImpl service = new MemberServiceImpl();
+		
+		// 리다이렉트, 포워드
+	    String nextPage=null;
+		
 		// 파라미터값 String 객체로 저장
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
@@ -149,6 +155,11 @@ public class MemberInsertController implements Controller{
 			return null;
 		}
 		
+		// 아이디 중복 체크
+		if(service.IdDoublecheck(id)!="NO") {
+			response.setStatus(409);
+			return null;
+		}
 		
 		
 		// VO 묶어주기
@@ -164,14 +175,9 @@ public class MemberInsertController implements Controller{
 		vo.setInfo(info);
 		vo.setPersonal(personal);
 		
-		// 서비스 객체 연결
-		MemberServiceImpl service = new MemberServiceImpl();
 		
 		// insert 성공시 양수 반환
 	    int cnt=service.register(vo);
-	    
-	    // 리다이렉트
-	    String nextPage=null;
 	    
 	    
 	    if(cnt>0) {

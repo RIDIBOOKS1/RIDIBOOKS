@@ -47,4 +47,15 @@ public class MemberDAO {
 			 session.close();
 			 return selectedVo;
 		}
+		
+		// 중복확인
+	   public String memberIdDoublecheck(String id) {
+		   SqlSession session=sqlSessionFactory.openSession();
+		   String dbId=session.selectOne("memberIdDoublecheck", id);// id or null
+		   String idDouble="NO";
+		   if(dbId!=null) {
+			   idDouble="YES";
+		   }
+		   return idDouble; // YES(중복), NO(중복아님)
+	   }
 }

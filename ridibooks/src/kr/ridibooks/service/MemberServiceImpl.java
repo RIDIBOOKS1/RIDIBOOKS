@@ -27,4 +27,9 @@ public class MemberServiceImpl implements MemberService {
 		return dao.findPw(vo);
 	}
 
+	@Override
+	public String IdDoublecheck(String id) {
+		return dao.memberIdDoublecheck(id);
+	}
+
 }
