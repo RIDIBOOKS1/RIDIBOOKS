@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+
+</head>
+<style>
+    .tabmenu{
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    border-bottom: 5px solid #1495b5;
+    padding: 0;
+}
+
+.tabmenu li {
+    float: left;
+    margin: 0 8px 0 0 ;
+    background: #d9dfe1;
+    border-radius: 10px 10px 0 0 ;
+}
+.tabmenu li:hover{
+    background: #cde0e5;
+}
+.tabmenu li a{
+    display: block;
+    padding: 5px 30px;
+    text-decoration: none;
+    color: #3e5358;
+}
+
+.tab .contents {
+    padding: 20px;
+    border-right: 1px solid #959595;
+    border-bottom: 1px solid #959595;
+    border-left: 1px solid #959595;
+
+    display: none;
+}
+.tabmenu li.active{
+    background: #1495b5;
+}
+.tabmenu li.active a{
+    color: #fff;
+}
+</style>
+<body>
+    <div class="tab">
+        <ul class="tabmenu">
+            <li id="characteristics" class="active"><a href="#">특징</a></li>
+            <li id="externalAppearance"><a href="#">외관</a></li>
+            <li id="design"><a href="#">디자인</a></li>
+            <li id="specification"><a href="#">사양</a></li>
+        </ul>
+
+        <div id="char_contents" class="contents" style="display: block">
+            <p>콤팩트하기 때문에 어디든지 들고 이동할 수 있는 스피커 탄생</p>
+            <p>스트리밍 시대의 Bluetooth오디오 스피커. 음역의 넓이에 장르를 가리지 않는 압도적인 사운드의 재현</p>
+        </div>
+
+        <div id="ext_contents" class="contents">
+           <p>반가워</p>
+        </div>
+
+        <div id="des_contents" class="contents">
+            <p>안녕</p>
+        </div>
+
+        <div id="spec_contents" class="contents">
+            <p>
+                bluetooth
+                - Ver: 3.0
+                - Frequency : 2.40 ~ 2.48 GHz
+                - Range : 10M
+                - Profile : HFP, A2DP, AVRCP
+            </p>
+
+            <p>
+                Audio
+                - RMS : 25W ( 2*5W + 15W )
+                - Frequency response : 35Hz ~ 18KHz
+                - S/N ratio : >= 65 dB
+                - Distortion : <= 1%
+                - RATED IMP : 4 OHM
+            </p>
+
+            <p>Adjustment : Power On/Off, Volume, Play.Pause, Bass Treble</p>
+
+            <p>Music File Format : MP3</p>
+
+          
+
+            <p>Net weight : 2.6Kg / 3.6Kg</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+        
+
+
+
+        $(".tabmenu a").on("click", function() {
+            // 클래스가 active인 태그를 찾아서 그 태그의 active 클래스를 지운다.
+            $(".tabmenu li.active").removeClass("active");
+
+            // 현재 클릭한 탭의 li에 active 클래스를 붙인다.
+            let $li = $(this).parent();
+            $li.addClass("active");
+
+            let currentID = $li.attr("id");
+            if(currentID == "characteristics") {
+                $(".contents").css("display", "none");
+                $("#char_contents").css("display", "block");
+            } else if(currentID == "externalAppearance") {
+                $(".contents").css("display", "none");
+                $("#ext_contents").css("display", "block");
+            } else if(currentID == "design") {
+                $(".contents").css("display", "none");
+                $("#des_contents").css("display", "block");
+            } else {
+                $(".contents").css("display", "none");
+                $("#spec_contents").css("display", "block");
+            }
+        });
+    </script>
+</body>
+</html>
