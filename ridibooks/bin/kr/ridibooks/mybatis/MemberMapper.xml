@@ -28,4 +28,8 @@
     	select * from memberInfo where email=#{email}
     </select>
     
+    <select id="findPw" parameterType="memberVO" resultType="memberVO">
+    	select * from memberInfo where id=#{id} and email=#{email}
+    </select>
+    
 </mapper>

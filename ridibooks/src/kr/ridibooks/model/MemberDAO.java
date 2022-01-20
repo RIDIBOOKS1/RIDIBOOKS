@@ -41,4 +41,10 @@ public class MemberDAO {
 			 return selectedVo;
 		}
 		
+		public MemberVO findPw(MemberVO vo) {
+			 SqlSession session=sqlSessionFactory.openSession();
+			 MemberVO selectedVo = session.selectOne("findPw", vo);
+			 session.close();
+			 return selectedVo;
+		}
 }

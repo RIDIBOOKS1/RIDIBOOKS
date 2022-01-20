@@ -19,9 +19,9 @@ public class FrontController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		// 클라이언트가 어떤 요청을 했는지 파악하기
 		String url=request.getRequestURI();
-		//System.out.println(url);		
+		
 		String ctx=request.getContextPath();
-		//System.out.println(ctx);		
+
 		// 실제로 요청한 명령이 무엇이지 파악
 		String command=url.substring(ctx.length());
 		System.out.println(command); // /memberInsert.do
