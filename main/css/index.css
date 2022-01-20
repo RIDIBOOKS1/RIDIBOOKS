@@ -296,11 +296,16 @@ button{
 }
 .new-box{
     background-color: #222;
+    position: relative;
 }
+
+
+
+
 .new-center{
     width: 960px;
     margin: 0 auto;
-    position: relative;
+   
 }
 
 .new-center h1{
@@ -329,6 +334,9 @@ button{
 .new-center span{
     color: #ccc;
 }
+
+
+/* section 4 */
 
 .time-center{
     width: 960px;
