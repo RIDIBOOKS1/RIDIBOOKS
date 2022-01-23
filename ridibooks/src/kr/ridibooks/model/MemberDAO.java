@@ -19,6 +19,8 @@ public class MemberDAO {
 			   e.printStackTrace();
 		   }
 	   }
+	   
+	   // 회원 가입
 		public int memberInsert(MemberVO vo) {
 			SqlSession session = sqlSessionFactory.openSession();
 			int cnt = session.insert("memberInsert", vo);
@@ -27,6 +29,7 @@ public class MemberDAO {
 			return cnt;
 		}
 		
+		// 로그인
 		public MemberVO memberLogin(MemberVO vo) {
 		   SqlSession session=sqlSessionFactory.openSession();
 		   MemberVO searchedVO = session.selectOne("memberLogin", vo);
@@ -34,6 +37,7 @@ public class MemberDAO {
 		   return searchedVO;
 		}
 		
+		// 이메일로 아이디 찾기
 		public MemberVO memberFind(String email) {
 			 SqlSession session=sqlSessionFactory.openSession();
 			 MemberVO selectedVo = session.selectOne("memberFind", email);
@@ -41,11 +45,21 @@ public class MemberDAO {
 			 return selectedVo;
 		}
 		
+		// pw 페이지로 가기 위해 id, email로 VO 값 리턴
 		public MemberVO findPw(MemberVO vo) {
 			 SqlSession session=sqlSessionFactory.openSession();
 			 MemberVO selectedVo = session.selectOne("findPw", vo);
 			 session.close();
 			 return selectedVo;
+		}
+		
+		// 비밀번호 변경
+		public int updatePw(MemberVO vo) {
+			 SqlSession session=sqlSessionFactory.openSession();
+			 int cnt=session.update("updatePw", vo);
+			 session.commit();
+			 session.close();
+			 return cnt;
 		}
 		
 		// 중복확인
@@ -67,4 +81,5 @@ public class MemberDAO {
 		   session.close();
 		   return cnt;
 	   }
+	   
 }

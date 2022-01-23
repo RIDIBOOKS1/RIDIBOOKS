@@ -40,4 +40,10 @@
         delete from memberInfo where id=#{id}
     </delete>
     
+    <update id="updatePw" parameterType="memberVO">
+         update memberInfo 
+         set pw=#{pw}
+         where id=#{id}	 
+    </update>
+    
 </mapper>

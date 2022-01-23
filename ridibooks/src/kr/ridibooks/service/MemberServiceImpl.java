@@ -37,4 +37,9 @@ public class MemberServiceImpl implements MemberService {
 		return dao.memberDelete(id);
 	}
 
+	@Override
+	public int resetPw(MemberVO vo) {
+		return dao.updatePw(vo);
+	}
+
 }

@@ -9,4 +9,5 @@ public interface MemberService {
 	public MemberVO findPassword(MemberVO vo);
 	public String idDoublecheck(String id);
 	public int withdrawal(String id);
+	public int resetPw(MemberVO vo);
 }

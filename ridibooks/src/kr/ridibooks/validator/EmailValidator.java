@@ -6,8 +6,9 @@ import java.util.regex.Pattern;
 public class EmailValidator {
 	
 		// 이메일 정규표현식
-		String emailPattern = "^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$";
+		String emailPattern = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@(?:\\w+\\.)+\\w+$";
 		
+
 		Matcher m;
 		
 		public boolean emailCheck(String email) {

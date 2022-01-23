@@ -9,9 +9,11 @@ import kr.ridibooks.controller.MemberFindByIdPageController;
 import kr.ridibooks.controller.MemberInsertController;
 import kr.ridibooks.controller.MemberLoginController;
 import kr.ridibooks.controller.MemberLogoutController;
+import kr.ridibooks.controller.MemberResetPasswordController;
 import kr.ridibooks.controller.MemberSignUpPageController;
 import kr.ridibooks.controller.TestController;
 import kr.ridibooks.controller.TestFindIDController;
+import kr.ridibooks.controller.TestFindPasswordController;
 import kr.ridibooks.controller.TestLoginPageController;
 
 
@@ -27,9 +29,11 @@ public class HandlerMapping {
 	  mappings.put("/account/logout.do", new MemberLogoutController());
 	  mappings.put("/account/find-id.do", new MemberFindByIdController());
 	  mappings.put("/account/find-password.do", new MemberFindPasswordController());
+	  mappings.put("/account/reset-password.do", new MemberResetPasswordController());
 	  mappings.put("/account/leave.do", new MemberDeleteController());
 	  mappings.put("/success.do", new TestController());
 	  mappings.put("/findidsuccess.do", new TestFindIDController());
+	  mappings.put("/findpw.do", new TestFindPasswordController());
 	  
 	  
   }
