@@ -34,7 +34,7 @@ public class HandlerMapping {
 	  mappings.put("/success.do", new TestController());
 	  mappings.put("/findidsuccess.do", new TestFindIDController());
 	  mappings.put("/findpw.do", new TestFindPasswordController());
-	  
+	  // ¡÷ºÆ
 	  
   }
   public Controller getController(String key) { 
