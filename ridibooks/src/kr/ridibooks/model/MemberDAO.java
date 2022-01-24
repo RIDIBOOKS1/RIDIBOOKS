@@ -45,10 +45,10 @@ public class MemberDAO {
 			 return selectedVo;
 		}
 		
-		// pw 페이지로 가기 위해 id, email로 VO 값 리턴
-		public MemberVO findPw(MemberVO vo) {
+		// id와 이메일 값으로 MemberVO 를 리턴해주는 메서드
+		public MemberVO idEmailReturnVO(MemberVO vo) {
 			 SqlSession session=sqlSessionFactory.openSession();
-			 MemberVO selectedVo = session.selectOne("findPw", vo);
+			 MemberVO selectedVo = session.selectOne("idEmailReturnVO", vo);
 			 session.close();
 			 return selectedVo;
 		}

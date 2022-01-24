@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="account/find-password.do" method="post">
+<form action="/ridibooks/account/find-password.do" method="post">
 	<input type="text" name="id">
 	<input type="email" name="email">
 	<input type="submit" value="비밀번호 변경하러가기">

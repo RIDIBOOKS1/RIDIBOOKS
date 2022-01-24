@@ -23,8 +23,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberVO findPassword(MemberVO vo) {
-		return dao.findPw(vo);
+	public MemberVO idEmailReturnVO(MemberVO vo) {
+		return dao.idEmailReturnVO(vo);
 	}
 
 	@Override

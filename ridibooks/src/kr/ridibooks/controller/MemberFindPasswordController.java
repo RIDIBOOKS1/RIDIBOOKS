@@ -23,18 +23,21 @@ public class MemberFindPasswordController implements Controller {
 		String id = request.getParameter("id");
 		String email = request.getParameter("email");
 		
+		// 아이디나 이메일 null 값
 		if(id == null  || email == null) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			System.out.println("null 값들어옴");
 			return null;
 		}
 		
+		// 아이디 형식 맞지 않음
 		if(!new IdValidator().idCheck(id)) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			System.out.println("아이디 유효X");
 			return null;
 		}
 		
+		// 이메일 형식 맞지 않음
 		if(!new EmailValidator().emailCheck(email)) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			System.out.println("이메일 유효X");
@@ -46,7 +49,7 @@ public class MemberFindPasswordController implements Controller {
 		vo.setEmail(email);
 		
 		
-		MemberVO foundVO = service.findPassword(vo);
+		MemberVO foundVO = service.idEmailReturnVO(vo);
 		
 		if(foundVO == null) {
 			// 찾아진 회원이 없는 경우
@@ -54,11 +57,7 @@ public class MemberFindPasswordController implements Controller {
 			System.out.println("해당하는 회원X");
 			return null;
 		} else {
-			// 찾아진 회원이 있는 경우
-			HttpSession session = request.getSession();
-			session.setAttribute("isLogin", false);
-			session.setAttribute("foundVO", foundVO);
-			
+			request.setAttribute("foundVO", foundVO);
 			// 응답코드
 			response.setStatus(200);
 		}

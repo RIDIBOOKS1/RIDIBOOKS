@@ -35,6 +35,7 @@ public class MemberLoginController implements Controller {
 			// ¼º°ø
 			HttpSession session = request.getSession();
 			session.setAttribute("isLogin", true);
+			session.setAttribute("vo", loginVO);
 			session.setAttribute("id", loginVO.getId());
 			session.setAttribute("name", loginVO.getName());
 			session.setMaxInactiveInterval(600);
