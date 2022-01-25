@@ -190,6 +190,7 @@ nav ul li img{
     flex-direction: column;
     margin-right: 70px;
 
+
 }
 
 .main{
@@ -198,6 +199,21 @@ nav ul li img{
 }
 .solo a{
     text-align: center;
+    text-decoration: none;
+    color: 	 #3366ff;
+    width: 100px;
+    margin: auto;
+    padding: 15px 25px ;
+    border: 1px solid 	 #99b3ff;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 1px 1px #f2f2f2;
+    
+}
+.solo a:hover{
+    background-color: #e6ecff;
+    transition: all 0.4s;
 }
 .Development{
     font-size: 14px;
@@ -210,5 +226,115 @@ nav ul li img{
     margin-bottom: 10px;
 }
 .crazy{
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.star{
+    margin-bottom: 15px;
+}
+.ribeca{
     font-size: 14px;
+    margin-bottom: 6px;
+}
+.ribeca a{
+    text-decoration: none;
+    color: #2e2e2e;
+    font-weight: 700;
+    font-size: 15px;
+}
+.wood a{
+    text-decoration: none;
+    color: #2e2e2e;
+    font-weight: 700;
+    font-size: 15px;
+
+}
+.line{
+    border-bottom: 2px solid #ccc;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.text{
+    width: 500px;
+}
+.pur-box{
+    display: flex;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+}
+.Purchase{
+    width: 150px;
+    text-align: center;
+    background-color: #eee;
+}
+.Purchase p{
+    line-height: 90px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #222;
+}
+.paper{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    
+}
+.paper li {
+    list-style: none;
+    padding: 3px;
+    
+}
+.number {
+    text-align: right;
+    font-weight: bold;
+    color: #4d4d4d;
+}
+.elec{
+    margin-left: 5px;
+}
+.paper li:first-child{
+    margin-top: 4px;
+}
+
+.five{
+    color: #ff3333;
+}
+.ten{
+    color: #6666ff;
+}
+.love{
+    float: right;
+}
+.hart{
+    display: flex;
+
+}
+.hart li{
+    list-style: none;
+    padding: 12px;
+    margin: 5px;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-shadow: 1px #ccc;
+    cursor: pointer;
+
+}
+.con{
+    text-decoration: none;
+    background-color: #4d79ff;
+    font-weight: bold;
+    line-height: 27px;
+}
+.con a{
+    color: #f2f2f2;
+    text-decoration: none;
+}
+.con:hover{
+    background-color: #3366ff;
+}
+.hover:hover{
+    background-color: #f2f2f2;
 }
