@@ -382,3 +382,34 @@ nav ul li img{
 .list img{
     filter: opacity(0.6);
 }
+
+.text-center{
+    width: 850px;
+    margin: 20px auto;
+    padding-right: 110px;
+}
+.text-center h1{
+    font-size: 20px;
+    color: #595959;
+    margin-bottom: 5px;
+}
+.line1{
+    border-bottom: 2px solid  #737373;
+}
+.pinut{
+    margin-top: 20px;
+    font-size: 14px;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height: 20px;
+}
+.hide{
+    float: right;
+    cursor: pointer;
+    color: #4d79ff;
+}
+.hide img{
+    vertical-align: -6px;
+}
+.profile{
+    margin-top: 80px;
+}
