@@ -382,3 +382,127 @@ nav ul li img{
 .list img{
     filter: opacity(0.6);
 }
+
+.text-center{
+    width: 850px;
+    margin: 20px auto;
+    padding-right: 110px;
+}
+.text-center h1{
+    font-size: 20px;
+    color: #595959;
+    margin-bottom: 5px;
+}
+.line1{
+    border-bottom: 2px solid  #737373;
+}
+.pinut{
+    margin-top: 20px;
+    font-size: 14px;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height: 20px;
+}
+.hide{
+    float: right;
+    cursor: pointer;
+    color: #4d79ff;
+}
+.hide img{
+    vertical-align: -6px;
+}
+.profile{
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+.pinut2{
+    border-bottom: 1px solid #ccc;
+    margin-top: 15px;
+    padding-bottom: 8px;
+}
+.pinut2 a{
+    color: #4d4d4d;
+    text-decoration: none;
+    font-size: 15px;
+
+}
+
+.pinut2 p {
+    color: #595959;
+    margin-bottom: 5px;
+}
+.libeca{
+    padding: 10px 10px 5px 0;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.libeca a{
+    text-decoration: none;
+    color: #222;
+}
+.libeca a:hover{
+    color: #1a8cff;
+}
+.libeca span:hover{
+    color: #1a8cff;
+}
+
+.libeca span{
+    font-size: 17px;
+    font-weight: 500;
+    color: #737373;
+}
+.news{
+    text-align: center;
+    padding: 8px 15px;
+    border: 1px solid #1a8cff;
+    width: 170px;
+    font-size: 14px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px #dfdfdf;
+    margin-bottom: 50px;
+    cursor: pointer;
+
+}
+.news:hover{
+    background-color:  #e6f2ff;
+}
+.news a{
+    text-decoration: none;
+    color:  #1a8cff;
+}
+
+.news img{
+    vertical-align: -2px;
+    margin-right: 5px;
+}
+.update{
+    float: right;
+    font-size: 12px;
+    color: #595959;
+}
+.update a{
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #595959;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 8px;
+    font-weight: 800;
+}
+.update img{
+    vertical-align: -3px;
+}
+.seal{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 23px;
+    color: #2e2e2e;
+}
+.pinut3{
+    font-size: 14px;
+    margin-top: 20px;
+    line-height: 23px;
+}
