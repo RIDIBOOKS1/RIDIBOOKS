@@ -14,6 +14,7 @@ import kr.ridibooks.validator.IdValidator;
 import kr.ridibooks.validator.NameValidator;
 import kr.ridibooks.validator.PwValidator;
 
+// 회원가입 로직 컨트롤러
 public class MemberInsertController implements Controller{
 
 	@Override
@@ -42,9 +43,11 @@ public class MemberInsertController implements Controller{
 		String infoStr = request.getParameter("info");
 		String personalStr = request.getParameter("personal");
 		
-		// 필수값(아이디, 비빌번호, 비빌번호 확인, 이메일, 이름, 출생년도, 이용약관동의, 개인정보 수집 및 이용동의)이 null 시 응답코드 400
+		// 필수값(아이디, 비빌번호, 비빌번호 확인, 이메일, 이름, 이용약관동의, 개인정보 수집 및 이용동의)이 null 시 응답코드 400
 		if(id == null || pw == null || pwCheck == null || email == null || name == null || agreeStr == null || personalStr == null) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			System.out.println("필수값 입력 안되서 생기는 오류");
+			return null;
 		}
 		
 		// 사용자 입력값 공백 금지
@@ -59,6 +62,13 @@ public class MemberInsertController implements Controller{
 		pwCheck = pwCheck.replace(" ", "");
 		email = email.replace(" ", "");
 		name = name.replace(" ", "");
+		
+		// 필수값(아이디, 비빌번호, 비빌번호 확인, 이메일, 이름, 이용약관동의, 개인정보 수집 및 이용동의)이 비어있을 시 응답코드 400
+		if(id.isEmpty() || pw.isEmpty() || pwCheck.isEmpty() || email.isEmpty() || name.isEmpty() || agreeStr.isEmpty() || personalStr.isEmpty()) {
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			System.out.println("필수값 입력 안되서 생기는 오류");
+			return null;
+		}
 		
 		if(birthdateStr != null) {
 			birthdateStr = birthdateStr.trim();
@@ -79,10 +89,14 @@ public class MemberInsertController implements Controller{
 			// 가입 가능 (1920~2008)외 응답코드 400
 			if(birthdate < 1920 || birthdate > 2008) {
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+				System.out.println("출생년도 오류");
+				return null;
 			}
 			
 			if(2009 <= birthdate && birthdate <= 2002) {
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+				System.out.println("출생년도 오류");
+				return null;
 			}
 		}
 		
@@ -125,31 +139,50 @@ public class MemberInsertController implements Controller{
 		// 아이디 유효성 체크
 		if(!new IdValidator().idCheck(id)) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			System.out.println("아이디 유효성 체크 오류");
+			return null;
 		}
 		
 		// 비밀번호 유효성 체크
 		if(!new PwValidator().pwCheck(pw)) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			System.out.println("비밀번호 유효성 체크 오류");
+			return null;
 		}
 		
 		// 비밀번호.equals(비밀번호 확인)한가
 		if(!pw.equals(pwCheck)) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			System.out.println("비밀번호 일치 오류");
+			return null;
 		}
 		
 		// 이메일 유효성 체크
 		if(!new EmailValidator().emailCheck(email)) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			System.out.println("이메일 유효성 체크 오류");
+			return null;
 		}
 		
 		// 이름 유효성 체크
 		if(!new NameValidator().nameCheck(name)) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			System.out.println("이름 유효성 체크 오류");
+			return null;
 		}
 		
 		// 아이디 중복 체크
 		if(service.idDoublecheck(id)!="NO") {
 			response.setStatus(409);
+			System.out.println("아이디 중복 체크 오류");
+			return null;
+		}
+		
+		// 이메일 중복 체크
+		if(service.emailDoublecheck(email)!="NO") {
+			response.setStatus(409);
+			System.out.println("이메일 중복 체크 오류");
+			return null;
 		}
 		
 		

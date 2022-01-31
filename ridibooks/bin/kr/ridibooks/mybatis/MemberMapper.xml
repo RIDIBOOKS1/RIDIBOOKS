@@ -36,6 +36,10 @@
         select id from memberInfo where id=#{id}        
     </select>
     
+     <select id="memberEmailDoublecheck" resultType="String" parameterType="String">
+        select email from memberInfo where email=#{email}        
+    </select>
+    
      <delete id="memberDelete" parameterType="String">  
         delete from memberInfo where id=#{id}
     </delete>
@@ -43,6 +47,12 @@
     <update id="updatePw" parameterType="memberVO">
          update memberInfo 
          set pw=#{pw}
+         where id=#{id}	 
+    </update>
+    
+    <update id="updateEmail" parameterType="memberVO">
+         update memberInfo 
+         set email=#{email}
          where id=#{id}	 
     </update>
     
