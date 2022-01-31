@@ -42,4 +42,14 @@ public class MemberServiceImpl implements MemberService {
 		return dao.updatePw(vo);
 	}
 
+	@Override
+	public int modifyEmail(MemberVO vo) {
+		return dao.updateEmail(vo);
+	}
+
+	@Override
+	public String emailDoublecheck(String email) {
+		return dao.memberEmailDoublecheck(email);
+	}
+
 }

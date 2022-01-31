@@ -53,6 +53,8 @@ public class MemberDAO {
 			 return selectedVo;
 		}
 		
+		
+		// 변경 문 하나로 합치기
 		// 비밀번호 변경
 		public int updatePw(MemberVO vo) {
 			 SqlSession session=sqlSessionFactory.openSession();
@@ -62,7 +64,17 @@ public class MemberDAO {
 			 return cnt;
 		}
 		
-		// 중복확인
+		// 이메일 변경
+		public int updateEmail(MemberVO vo) {
+			 SqlSession session=sqlSessionFactory.openSession();
+			 int cnt=session.update("updateEmail", vo);
+			 session.commit();
+			 session.close();
+			 return cnt;
+		}
+		
+		// 중복확인 하나로 합치기
+		// 아이디 중복확인
 	   public String memberIdDoublecheck(String id) {
 		   SqlSession session=sqlSessionFactory.openSession();
 		   String dbId=session.selectOne("memberIdDoublecheck", id);// id or null
@@ -73,6 +85,17 @@ public class MemberDAO {
 		   return idDouble; // YES(중복), NO(중복아님)
 	   }
 	   
+	   // 이메일 중복 확인
+		public String memberEmailDoublecheck(String email) {
+			SqlSession session=sqlSessionFactory.openSession();
+			String dbEmail=session.selectOne("memberEmailDoublecheck", email);// email or null
+			String emailDouble="NO";
+			if(dbEmail!=null) {
+				emailDouble="YES";
+			}
+			return emailDouble; // YES(중복), NO(중복아님)
+		}
+	   
 	   // 회원탈퇴
 	   public int memberDelete(String id) {
 		   SqlSession session=sqlSessionFactory.openSession();
@@ -81,5 +104,6 @@ public class MemberDAO {
 		   session.close();
 		   return cnt;
 	   }
+	   
 	   
 }

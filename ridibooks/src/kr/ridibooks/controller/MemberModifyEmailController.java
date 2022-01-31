@@ -6,26 +6,24 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.ibatis.reflection.SystemMetaObject;
-
 import kr.ridibooks.model.MemberVO;
 import kr.ridibooks.service.MemberServiceImpl;
-import kr.ridibooks.validator.PwValidator;
+import kr.ridibooks.validator.EmailValidator;
 
-public class MemberModifyPasswordController implements Controller {
+public class MemberModifyEmailController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// ContextPath
 		String ctx=request.getContextPath();
-								
+										
 		// 서비스 객체 연결
 		MemberServiceImpl service = new MemberServiceImpl();
-		
+				
 		// 리다이렉트, 포워드
-	    String nextPage=null;
-		
+		String nextPage=null;
+				
 		// hidden 으로 처리된 id / email 값
 		String id = request.getParameter("id");
 		String email = request.getParameter("email");
@@ -36,34 +34,28 @@ public class MemberModifyPasswordController implements Controller {
 		idEmailVO.setEmail(email);
 		MemberVO foundVO = service.idEmailReturnVO(idEmailVO);
 		
-		String currentPW = request.getParameter("currentPW");
-		String newPW = request.getParameter("newPW");
-		String newPWCheck = request.getParameter("newPWCheck");
+		String newEmail = request.getParameter("newEmail");
 		
-		if(currentPW == null || newPW == null || newPWCheck == null) {
-			System.out.println("한개 이상의 값이 null");
+		if(newEmail == null) {
 			response.setStatus(400);
+			return null;
 		}
 		
-		if(!new PwValidator().pwCheck(newPW)) {
-			System.out.println("비밀번호 형식이 맞지 않음");
+		if(!new EmailValidator().emailCheck(newEmail)) {
 			response.setStatus(400);
+			return null;
 		}
 		
-		if(!foundVO.getPw().equals(currentPW)) {
-			System.out.println("로그인된 회원의 비밀번호와 currentPW가 일치하지 않음");
+		if(service.emailDoublecheck(newEmail).equals("YES")) {
 			response.setStatus(409);
+			System.out.println("이메일 중복");
+			return null;
 		}
 		
-		if(!newPW.equals(newPWCheck)) {
-			System.out.println("변경하려는 비밀번호와 비밀번호 확인이 일치하지 않음");
-			response.setStatus(409);
-		}
+		foundVO.setEmail(newEmail);
 		
 		
-		foundVO.setPw(newPW);
-		
-		int cnt = service.resetPw(foundVO);
+		int cnt = service.modifyEmail(foundVO);
 		
 		if(cnt > 0) {
 			// 비밀번호 변경 성공
@@ -75,6 +67,7 @@ public class MemberModifyPasswordController implements Controller {
 	    }	
 		
 		return nextPage;
+		
 	}
 
 }

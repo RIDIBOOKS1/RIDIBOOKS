@@ -24,7 +24,7 @@ public class FrontController extends HttpServlet {
 
 		// 실제로 요청한 명령이 무엇이지 파악
 		String command=url.substring(ctx.length());
-		System.out.println(command); // /memberInsert.do
+		System.out.println(command); // /account/signup.do
 		// 요청에 따른 분기작업(if~ else if~)
 		Controller controller=null;
 		String nextPage=null;

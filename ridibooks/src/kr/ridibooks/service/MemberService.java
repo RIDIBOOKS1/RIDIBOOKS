@@ -8,6 +8,8 @@ public interface MemberService {
 	public MemberVO login(MemberVO vo);
 	public MemberVO idEmailReturnVO(MemberVO vo);
 	public String idDoublecheck(String id);
+	public String emailDoublecheck(String email);
 	public int withdrawal(String id);
 	public int resetPw(MemberVO vo);
+	public int modifyEmail(MemberVO vo);
 }
