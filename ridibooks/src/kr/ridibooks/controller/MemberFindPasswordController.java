@@ -19,7 +19,7 @@ public class MemberFindPasswordController implements Controller {
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// ContextPath
-				String ctx=request.getContextPath();
+		String ctx=request.getContextPath();
 				
 		// 리다이렉트, 포워드
 	    String nextPage=null;
@@ -64,7 +64,7 @@ public class MemberFindPasswordController implements Controller {
 		vo.setId(id);
 		vo.setEmail(email);
 		
-		
+		// id와 email 로 VO 찾기
 		MemberVO foundVO = service.idEmailReturnVO(vo);
 		
 		if(foundVO == null) {
