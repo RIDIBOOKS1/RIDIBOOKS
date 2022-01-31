@@ -6,8 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.ibatis.reflection.SystemMetaObject;
-
 import kr.ridibooks.model.MemberVO;
 import kr.ridibooks.service.MemberServiceImpl;
 
