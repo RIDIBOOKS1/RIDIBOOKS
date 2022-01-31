@@ -276,23 +276,55 @@
                </div>
    
                <div class="star-check">
-                   <h3>이 책을 평가해주세요!</h3>
+                   <h3 class="Evaluation" >이 책을 평가해주세요!</h3>
+                    <div class="box-center"> 
+                        <img class="blue1" src="images/Group1.png">
+                        <img class="blue2" src="images/Group2.png">
+                        <img class="blue3" src="images/Group3.png">
+                        <img class="blue4" src="images/Group4.png">
+                        <img class="blue5" src="images/Group5.png">
+
+                    
+                    </div>
                    <div class="counting">
                        <img id="stars1" src="images/star-gray.png">
-                       <img class="stars2" src="images/star-gray.png">
-                       <img class="stars3" src="images/star-gray.png">
-                       <img class="stars4" src="images/star-gray.png">
-                       <img class="stars5" src="images/star-gray.png">
+                       <img id="stars2" src="images/star-gray.png">
+                       <img id="stars3" src="images/star-gray.png">
+                       <img id="stars4" src="images/star-gray.png">
+                       <img id="stars5" src="images/star-gray.png">
                     </div>
                    <textarea name="review" id="review" cols="30" rows="10" placeholder="리뷰 작성 시 광고 및 욕설, 비속어나 타인을 비방하는 문구를 사용하시면 비공개될 수 있습니다."></textarea>
                    
-                   <a href="#" class="Issues"><img src="images/icons8-alert-30.png" width="15px" height="15px"> 리뷰 작성 유의사항 </a>
+                   <a href="#0" class="Issues">
+                       <img src="images/icons8-alert-30.png" width="15px" height="15px"> 
+                        리뷰 작성 유의사항 
+                    </a>
                    <div class="spoilar">
                        <input type="checkbox" id="checkbox">
                         스포일러가 있습니다.   
                        <a href="#">리뷰 남기기</a>
-                   </div> 
+                   </div>   
+                   <div class="danger">
+                    <p>
+                       <span>건전한 리뷰 정착 및 양질의 리뷰를 위해 아래 해당하는 리뷰는 비공개 조치될 수 있음을 안내드립니다.</span> <br><br>
+
+                      
+                        1. 타인에게 불쾌감을 주는 욕설<br>
+                        2. 비속어나 타인을 비방하는 내용<br>
+                        3. 특정 종교, 민족, 계층을 비방하는 내용<br>
+                        4. 해당 도서의 줄거리나 리디북스 서비스 이용과 관련이 없는 내용<br>
+                        5. 의미를 알 수 없는 내용<br>
+                        6. 광고 및 반복적인 글을 게시하여 서비스 품질을 떨어트리는 내용<br>
+                        7. 저작권상 문제의 소지가 있는 내용<br>
+                        8. 다른 리뷰에 대한 반박이나 논쟁을 유발하는 내용<br>
+                        * 결말을 예상할 수 있는 리뷰는 자제하여 주시기 바랍니다.<br><br>
+
+                        <span>이 외에도 건전한 리뷰 문화 형성을 위한 운영 목적과 취지에 맞지 않는 내용은 담당자에 의해 리뷰가 <br>비공개
+                             처리가 될 수 있습니다.</span> 
+                    </p>
+                   </div>
                </div>
+
 
             </div>
         </div>
@@ -318,6 +350,27 @@
                 첫 번째 리뷰를 남겨주세요!</p>
             </div>
             <h3 class="Criteria">구매자 표시 기준은 무엇인가요? <img src="images/icons8-down-20.png" width="10px" height="10px"> </h3>
+            <h3 class="Criteria" id="up-arrow">구매자 표시 기준은 무엇인가요? <img src="images/icons8-up-20.png "width="10px" height="10px"> </h3>
+            <div class="pharch">
+                <p class="pharch-black">'구매자' 표시는 리디북스에서 유료도서 결제 후 다운로드 하시거나 리디셀렉트 도서를 다운로드하신 경우에만 표시됩니다.</p><br>
+                <p>
+                   <span>무료 도서 (프로모션 등으로 무료로 전환된 도서 포함)</span> <br>
+                    '구매자'로 표시되지 않습니다.
+                </p><br>
+                <p>
+                    <span>시리즈 도서 내 무료 도서</span> <br>
+                    '구매자’로 표시되지 않습니다. 하지만 같은 시리즈의 유료 도서를 결제한 뒤 리뷰를 수정하거나 재등록하면 <br>
+                    '구매자'로 표시됩니다.  
+                </p><br>
+                <p>
+                    <span> 영구 삭제</span><br>
+                    도서를 영구 삭제해도 ‘구매자’ 표시는 남아있습니다.
+                </p><br>
+                <p>
+                    <span>결제 취소</span> <br>
+                    ‘구매자’ 표시가 자동으로 사라집니다.
+                </p>
+            </div>
         </div>
 
         <!-- 이 책과 함께 구매한 책 -->
@@ -454,15 +507,26 @@
         // 작품 소개 펼처보기 클릭 시 숨겼던 텍스트 보이기
 
         $(".hide").on("click",function(){
-            $(".text-hide").toggle();
+            $(".text-hide").slideToggle();
             $(".hide").css("display","none");
             $(".show2").css("display","block");
 
         });
         $(".show2").on("click",function(){
-            $(".text-hide").css("display","none");
-            $(".show2").css("display","none");
+            $(".text-hide").slideUp();
+            $(".show2").hide();
             $(".hide").show();
+
+            $(window).scroll(function(){
+                let 높이 = $(window).scrollTop();
+                console.log(높이);
+                // 작품소개 제목 높이 844
+            });
+
+            let top = 844;
+            window.scroll({top:top, behavior:"smooth"});
+            
+        
         });
 
         // 저자 프로필 클릭 시 텍스트 바뀜 
@@ -486,24 +550,158 @@
         
         // 목차 펼처보기 클릭 시 숨겼던 텍스트 보이기
         $(".hide1").on("click",function(){
-            $(".hide1-hide").show();
+            $(".hide1-hide").slideToggle();
             $(".hide1").hide();
             $(".show3").show();
         });
         $(".show3").on("click",function(){
-            $(".hide1-hide").hide();
+            $(".hide1-hide").slideUp();
             $(".hide1").show();
             $(".show3").hide();
+
+            // 목차 제목 스크롤 위치 1729
+
+            let top = 1729;
+          
+            window.scroll({top:top,behavior:"smooth"});
         });
+
+        // 별점 남기기 스크립트
 
         $("#stars1").on("mouseover",function(){
             document.getElementById("stars1").src = "images/star-red.png";
+            $(".Evaluation").html("");
+            $(".blue1").show();
 
         });
          $("#stars1").on("mouseout",function(){
             document.getElementById("stars1").src = "images/star-gray.png";
-            
+            $(".Evaluation").html("이 책을 평가해주세요");
+            $(".blue1").hide();
+
         });
+
+        $("#stars2").on("mouseover",function(){
+            document.getElementById("stars1").src = "images/star-red.png";
+            document.getElementById("stars2").src = "images/star-red.png";
+            $(".Evaluation").html("");
+            $(".blue1").hide();
+            $(".blue2").show();
+
+        });
+         $("#stars2").on("mouseout",function(){
+            document.getElementById("stars1").src = "images/star-gray.png";
+            document.getElementById("stars2").src = "images/star-gray.png";
+            $(".Evaluation").html("");
+            $(".blue1").hide();
+            $(".blue2").hide();
+
+        });
+
+        $("#stars3").on("mouseover",function(){
+            document.getElementById("stars1").src = "images/star-red.png";
+            document.getElementById("stars2").src = "images/star-red.png";
+            document.getElementById("stars3").src = "images/star-red.png";
+            
+            $(".Evaluation").html("");
+            $(".blue1").hide();
+            $(".blue2").hide();
+            $(".blue3").show();
+
+        });
+         $("#stars3").on("mouseout",function(){
+            document.getElementById("stars1").src = "images/star-gray.png";
+            document.getElementById("stars2").src = "images/star-gray.png";
+            document.getElementById("stars3").src = "images/star-gray.png";
+            
+            $(".Evaluation").html("");
+            $(".blue1").hide();
+            $(".blue2").hide();
+            $(".blue3").hide();
+
+        });
+
+        $("#stars4").on("mouseover",function(){
+            document.getElementById("stars1").src = "images/star-red.png";
+            document.getElementById("stars2").src = "images/star-red.png";
+            document.getElementById("stars3").src = "images/star-red.png";
+            document.getElementById("stars4").src = "images/star-red.png";
+
+            
+            $(".Evaluation").html("");
+            $(".blue1").hide();
+            $(".blue2").hide();
+            $(".blue3").hide();
+            $(".blue4").show();
+
+        });
+         $("#stars4").on("mouseout",function(){
+            document.getElementById("stars1").src = "images/star-gray.png";
+            document.getElementById("stars2").src = "images/star-gray.png";
+            document.getElementById("stars3").src = "images/star-gray.png";
+            document.getElementById("stars4").src = "images/star-gray.png";
+            
+            $(".Evaluation").html("");
+            $(".blue1").hide();
+            $(".blue2").hide();
+            $(".blue3").hide();
+            $(".blue4").hide();
+
+        });
+
+        $("#stars5").on("mouseover",function(){
+            document.getElementById("stars1").src = "images/star-red.png";
+            document.getElementById("stars2").src = "images/star-red.png";
+            document.getElementById("stars3").src = "images/star-red.png";
+            document.getElementById("stars4").src = "images/star-red.png";
+            document.getElementById("stars5").src = "images/star-red.png";
+
+            
+            $(".Evaluation").html("");
+            $(".blue1").hide();
+            $(".blue2").hide();
+            $(".blue3").hide();
+            $(".blue4").hide();
+            $(".blue5").show();
+
+        });
+         $("#stars5").on("mouseout",function(){
+            document.getElementById("stars1").src = "images/star-gray.png";
+            document.getElementById("stars2").src = "images/star-gray.png";
+            document.getElementById("stars3").src = "images/star-gray.png";
+            document.getElementById("stars4").src = "images/star-gray.png";
+            document.getElementById("stars5").src = "images/star-gray.png";
+            
+            $(".Evaluation").html("");
+            $(".blue1").hide();
+            $(".blue2").hide();
+            $(".blue3").hide();
+            $(".blue4").hide();
+            $(".blue5").hide();
+
+        });
+
+        // 리뷰 작성 유의사항 클릭 시 감췄던 텍스트 보이기
+
+        $(".Issues").on("click",function(){
+            $(".danger").toggle();
+
+        });
+
+        // 구매자 표시 기준은 무엇인가요? 토글 
+
+        $(".Criteria").on("click",function(){
+            $(".pharch").slideToggle();
+            $(".Criteria").css("display","none");
+            $("#up-arrow").show();
+        });
+        $("#up-arrow").on("click",function(){
+            $(".Criteria").show();
+            $("#up-arrow").hide();
+
+        });
+      
+
     </script>
 </body>
 </html>

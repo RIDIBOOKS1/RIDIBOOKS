@@ -649,13 +649,36 @@ nav ul li img{
 .star-check h3{
     text-align: center;
 }
+
+.box-center{
+    text-align: center;
+
+}
+.blue1{
+    display: none;
+}
+.blue2{
+    display: none;
+}
+.blue3{
+    display: none;
+}
+.blue4{
+    display: none;
+}
+.blue5{
+    display: none;
+}
+
 .counting{
     text-align: center;
-    margin-top: 15px;
+    padding-top: 15px;
+    
 
 }
 .counting img{
     padding-right: 20px;
+    cursor: pointer;
 }
 #review{
     width: 700px;
@@ -683,6 +706,12 @@ nav ul li img{
     filter: opacity(0.6);
     
 }
+.Issues:hover{
+    background-color: #ebebeb;
+    transition: all 0.4s;
+}
+
+
 .Issues img{
     vertical-align: -2px;
 }
@@ -695,6 +724,23 @@ nav ul li img{
 }
 .spoilar:hover{
     color: #252525;
+}
+
+.danger{
+    width: 685px;
+    margin: 20px auto;
+    margin-left: 10px;
+    padding: 30px 20px;
+    background-color:   #f2f2f2;
+    font-size: 13px;
+    line-height: 20px;
+    color:  #8c8c8c;
+    display: none;
+}
+.danger span{
+    font-size: 13px;
+    font-weight: bold;
+    color: #505050;
 }
 
 input[type="checkbox"]{
@@ -741,18 +787,41 @@ input[type="checkbox"]{
     border-bottom: 1px solid #ccc;
 }
 .pinut4 p{
-    margin-top: 100px;
+    margin-top: 70px;
     margin-bottom: 50px;
     text-align: center;
     line-height: 30px;
     font-weight: bold;
-    color: #6e6e6e;
+    color: #888888;
 }
 .Criteria{
     font-size: 12px;
     filter: opacity(0.4);
     margin-top: 20px;
     cursor: pointer;
+}
+#up-arrow{
+    display: none;
+}
+
+
+.pharch{
+    margin-top: 20px;
+    background-color: #f1f1f1;
+    padding: 30px 20px;
+    color: #7a7a7a;
+    font-size: 13px;
+    line-height: 23px;
+    display: none;
+}
+.pharch span{
+    font-weight: bold;
+    font-size: 14px;
+}
+.pharch-black{
+    color: #252525;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 /* 이 책과 함께 구매한 책 */
