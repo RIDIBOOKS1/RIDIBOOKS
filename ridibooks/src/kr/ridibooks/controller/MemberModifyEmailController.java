@@ -6,6 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.ibatis.reflection.SystemMetaObject;
+
 import kr.ridibooks.model.MemberVO;
 import kr.ridibooks.service.MemberServiceImpl;
 import kr.ridibooks.validator.EmailValidator;
@@ -34,18 +36,31 @@ public class MemberModifyEmailController implements Controller {
 		idEmailVO.setEmail(email);
 		MemberVO foundVO = service.idEmailReturnVO(idEmailVO);
 		
+		// 로그인안한 상태에서 비밀번호 변경하려고 함
+		if(foundVO == null) {
+			System.out.println("로그인 되어 있지 않음");
+			response.setStatus(404);
+			return null;
+		}
+		
+		// 사용자가 입력한 변경하려는 이메일 스트링 객체에 저장
 		String newEmail = request.getParameter("newEmail");
 		
-		if(newEmail == null) {
+		// 사용자 입력값이 null 이거나 비어 있는 경우
+		if(newEmail == null || newEmail.isEmpty()) {
+			System.out.println("사용자 입력값이 null 이거나 비어 있는 경우");
 			response.setStatus(400);
 			return null;
 		}
 		
+		// 입력한 이메일이 형식에 맞지 않음
 		if(!new EmailValidator().emailCheck(newEmail)) {
+			System.out.println("입력한 이메일이 형식에 맞지 않음");
 			response.setStatus(400);
 			return null;
 		}
 		
+		// 입력한 이메일 값이 중복될 경우
 		if(service.emailDoublecheck(newEmail).equals("YES")) {
 			response.setStatus(409);
 			System.out.println("이메일 중복");
