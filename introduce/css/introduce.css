@@ -601,6 +601,7 @@ nav ul li img{
     display: table-cell;
     width: 120px;
     text-align: center;
+    padding-top: 30px;
 
 }
 .star-box p{
@@ -650,12 +651,18 @@ nav ul li img{
     text-align: center;
 }
 
+.Evaluation{
+    margin-bottom: 30px;
+    margin-top: 30px;
+    
+}
 .box-center{
     text-align: center;
 
 }
 .blue1{
     display: none;
+
 }
 .blue2{
     display: none;
@@ -672,7 +679,7 @@ nav ul li img{
 
 .counting{
     text-align: center;
-    padding-top: 15px;
+    padding-top: 10px;
     
 
 }
