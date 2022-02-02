@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    background: #1E91D9;
+    height: 120px;
+}
+header .center-box{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.sum{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+
+
+.wrap a {
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Helvetica Neue,sans-serif;
+
+}
+
+.wrap input{
+    outline-style: none;
+    margin-left: 20px;
+    width: 325px;
+    height: 40px;
+    border-radius: 4px;
+    border-style: none;
+    padding:  5px 33px;
+    box-sizing: border-box;
+
+    
+}
+
