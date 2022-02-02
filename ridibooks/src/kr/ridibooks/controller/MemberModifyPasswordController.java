@@ -36,28 +36,39 @@ public class MemberModifyPasswordController implements Controller {
 		idEmailVO.setEmail(email);
 		MemberVO foundVO = service.idEmailReturnVO(idEmailVO);
 		
+		if(foundVO == null) {
+			System.out.println("로그인 되어 있지 않음");
+			response.setStatus(404);
+			return null;
+		}
+		
 		String currentPW = request.getParameter("currentPW");
 		String newPW = request.getParameter("newPW");
 		String newPWCheck = request.getParameter("newPWCheck");
 		
-		if(currentPW == null || newPW == null || newPWCheck == null) {
-			System.out.println("한개 이상의 값이 null");
+		if(currentPW == null || newPW == null || newPWCheck == null || currentPW.isEmpty() || newPW.isEmpty() || newPWCheck.isEmpty()) {
+			System.out.println("한개 이상의 값이 null 또는 비어있음");
 			response.setStatus(400);
+			return null;
 		}
 		
-		if(!new PwValidator().pwCheck(newPW)) {
-			System.out.println("비밀번호 형식이 맞지 않음");
-			response.setStatus(400);
-		}
-		
+		// 로그인된 회원의 비밀번호와 currentPW이 일치하지 않음
 		if(!foundVO.getPw().equals(currentPW)) {
 			System.out.println("로그인된 회원의 비밀번호와 currentPW가 일치하지 않음");
 			response.setStatus(409);
+			return null;
 		}
 		
 		if(!newPW.equals(newPWCheck)) {
 			System.out.println("변경하려는 비밀번호와 비밀번호 확인이 일치하지 않음");
 			response.setStatus(409);
+			return null;
+		}
+		
+		if(!new PwValidator().pwCheck(newPW)) {
+			System.out.println("비밀번호 형식이 맞지 않음");
+			response.setStatus(400);
+			return null;
 		}
 		
 		
