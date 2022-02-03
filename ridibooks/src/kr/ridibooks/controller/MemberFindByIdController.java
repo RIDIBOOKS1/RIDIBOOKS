@@ -50,7 +50,7 @@ public class MemberFindByIdController implements Controller {
 		}
 		
 		// 이메일로 사용자 정보 가져오기
-		MemberVO foundVO = service.findById(email);
+		MemberVO foundVO = service.findByEmail(email);
 		
 		// 일치하는 회원 정보가 없을 때 응답코드 404
 		if(foundVO == null) {

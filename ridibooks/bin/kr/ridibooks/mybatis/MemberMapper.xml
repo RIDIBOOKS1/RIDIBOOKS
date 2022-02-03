@@ -20,6 +20,17 @@
         )       
     </insert>
     
+    <insert id="memberMarketingInsert" parameterType="memberMarketingVO">
+        insert into marketinginfo(subEmail, emailagree, appagree, appnightagree, memberInfoId)
+        values(
+        #{subEmail},
+        #{emailagree},
+        #{appagree},
+        #{appnightagree},
+        #{memberInfoId}
+        )       
+    </insert>
+    
     <select id="memberLogin" parameterType="memberVO" resultType="memberVO">
         select * from memberInfo where id=#{id} and pw=#{pw}
     </select>
@@ -54,6 +65,15 @@
          update memberInfo 
          set email=#{email}
          where id=#{id}	 
+    </update>
+    
+    <update id="updateMarketing" parameterType="memberMarketingVO">
+         update marketinginfo 
+         set subEmail=#{subEmail},
+         emailagree=#{emailagree},
+         appagree=#{appagree},
+         appnightagree=#{appnightagree}
+         where memberInfoId=#{memberInfoId}	 
     </update>
     
 </mapper>

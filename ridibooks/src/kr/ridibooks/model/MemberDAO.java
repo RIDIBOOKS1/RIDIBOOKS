@@ -29,6 +29,15 @@ public class MemberDAO {
 			return cnt;
 		}
 		
+		// 마케팅 정보 insert
+		public int memberMarketingInsert(MemberMarketingVO mVo) {
+			SqlSession session = sqlSessionFactory.openSession();
+			int cnt = session.insert("memberMarketingInsert", mVo);
+			session.commit();
+			session.close(); // 반납
+			return cnt;
+		}
+		
 		// 로그인
 		public MemberVO memberLogin(MemberVO vo) {
 		   SqlSession session=sqlSessionFactory.openSession();
@@ -37,7 +46,7 @@ public class MemberDAO {
 		   return searchedVO;
 		}
 		
-		// 이메일로 아이디 찾기
+		// 이메일로 멤버 반환
 		public MemberVO memberFind(String email) {
 			 SqlSession session=sqlSessionFactory.openSession();
 			 MemberVO selectedVo = session.selectOne("memberFind", email);
@@ -68,6 +77,15 @@ public class MemberDAO {
 		public int updateEmail(MemberVO vo) {
 			 SqlSession session=sqlSessionFactory.openSession();
 			 int cnt=session.update("updateEmail", vo);
+			 session.commit();
+			 session.close();
+			 return cnt;
+		}
+		
+		// 마케팅 정보 수신관리 변경
+		public int updateMarketing(MemberMarketingVO mVo) {
+			 SqlSession session=sqlSessionFactory.openSession();
+			 int cnt=session.update("updateMarketing", mVo);
 			 session.commit();
 			 session.close();
 			 return cnt;

@@ -6,6 +6,7 @@
   <properties resource="kr/ridibooks/mybatis/db.properties"/> 
    <typeAliases>
       <typeAlias type="kr.ridibooks.model.MemberVO" alias="memberVO"/>     
+      <typeAlias type="kr.ridibooks.model.MemberMarketingVO" alias="memberMarketingVO"/>     
   </typeAliases> 
   <environments default="development">
     <environment id="development">

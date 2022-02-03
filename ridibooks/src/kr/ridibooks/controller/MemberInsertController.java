@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.ridibooks.model.MemberDAO;
+import kr.ridibooks.model.MemberMarketingVO;
 import kr.ridibooks.model.MemberVO;
 import kr.ridibooks.service.MemberServiceImpl;
 import kr.ridibooks.validator.EmailValidator;
@@ -201,16 +202,31 @@ public class MemberInsertController implements Controller{
 		
 		
 		// insert 성공시 양수 반환
-	    int cnt=service.register(vo);
+	    int cnt = service.register(vo);
 	    
 	    
-	    if(cnt>0) {
+	    if(cnt > 0) {
 	    	// 가입성공
 	    	nextPage="redirect:"+ctx+"/success.do";
 	    }else {
 	    	// 가입실패-> 예외객체를 만들어서 WAS에게 던지기
 	    	throw new ServletException("not insert");	    	
 	    }	
+	    
+	    // 마케팅 정보 -> 기본으로 세팅
+	    MemberMarketingVO marketingVO = new MemberMarketingVO();
+	    marketingVO.setSubEmail(email);
+	    marketingVO.setMemberInfoId(id);
+	    marketingVO.setEmailagree(0);
+	    marketingVO.setAppagree(0);
+	    marketingVO.setAppnightagree(1);
+	    
+	    // 마케팅 정보 insert
+	    cnt = service.registerMarketing(marketingVO);
+	    
+	    if(cnt <= 0) {
+	    	throw new ServletException("not insert");	  
+	    }
 	    
 	    //nextPage로 리다이렉트
 		return nextPage;

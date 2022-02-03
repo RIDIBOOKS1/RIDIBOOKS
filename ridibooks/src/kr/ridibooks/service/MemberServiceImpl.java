@@ -1,20 +1,26 @@
 package kr.ridibooks.service;
 
 import kr.ridibooks.model.MemberDAO;
+import kr.ridibooks.model.MemberMarketingVO;
 import kr.ridibooks.model.MemberVO;
 
 public class MemberServiceImpl implements MemberService {
 
 	MemberDAO dao = new MemberDAO();
-	
+
 	@Override
 	public int register(MemberVO vo) {
 		return dao.memberInsert(vo);
 	}
 
 	@Override
-	public MemberVO findById(String id) {
-		return dao.memberFind(id);
+	public int registerMarketing(MemberMarketingVO mVo) {
+		return dao.memberMarketingInsert(mVo);
+	}
+
+	@Override
+	public MemberVO findByEmail(String email) {
+		return dao.memberFind(email);
 	}
 
 	@Override
@@ -50,6 +56,11 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public String emailDoublecheck(String email) {
 		return dao.memberEmailDoublecheck(email);
+	}
+
+	@Override
+	public int modifyMarketing(MemberMarketingVO mVo) {
+		return dao.updateMarketing(mVo);
 	}
 
 }

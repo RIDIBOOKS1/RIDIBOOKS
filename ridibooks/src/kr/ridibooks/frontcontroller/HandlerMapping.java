@@ -11,6 +11,7 @@ import kr.ridibooks.controller.MemberLoginController;
 import kr.ridibooks.controller.MemberLogoutController;
 import kr.ridibooks.controller.MemberModifyController;
 import kr.ridibooks.controller.MemberModifyEmailController;
+import kr.ridibooks.controller.MemberModifyMarketingController;
 import kr.ridibooks.controller.MemberModifyPasswordController;
 import kr.ridibooks.controller.MemberResetPasswordController;
 import kr.ridibooks.controller.MemberSignUpPageController;
@@ -19,6 +20,7 @@ import kr.ridibooks.controller.TestFindPasswordController;
 import kr.ridibooks.controller.TestLoginPageController;
 import kr.ridibooks.controller.TestModifyController;
 import kr.ridibooks.controller.TestModifyEmailPageController;
+import kr.ridibooks.controller.TestModifyMarketingPageController;
 import kr.ridibooks.controller.TestModifyPwPageController;
 
 
@@ -51,6 +53,9 @@ public class HandlerMapping {
 	  // 회원정보 변경(이메일) 테스트 페이지
 	  mappings.put("/account/modifyEmailpage.do", new TestModifyEmailPageController());
 	  
+	  // 회원정보 변경(마케팅 정보 수신관리) 테스트 페이지
+	  mappings.put("/account/modifyMarketingpage.do", new TestModifyMarketingPageController());
+	  
 	  // 성공했을 떄 이동하는 테스트 페이지
 	  mappings.put("/success.do", new TestController());
 	  
@@ -82,6 +87,9 @@ public class HandlerMapping {
 	  
 	  // 회원정보 수정 -> 이메일
 	  mappings.put("/account/modify/email.do", new MemberModifyEmailController());
+	  
+	  // 회원정보 수정 -> 마케팅정보수신관리
+	  mappings.put("/account/modify/marketing.do", new MemberModifyMarketingController());
 	  
 	  // 회원탈퇴 컨트롤러 -> 추후 delete가 아니라 로그 정보 남기게 수정해야 함
 	  mappings.put("/account/leave.do", new MemberDeleteController());
