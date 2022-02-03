@@ -4,18 +4,27 @@
 }
 
 header{
-    background: #1E91D9;
-    height: 120px;
+
+    height: 300px;
+    width: 100%;
+    background: url(../images/blue.png) no-repeat center top -110px;
+    background-color: #1E91D9;
+
+
+
 }
-header .center-box{
+.center-box{
     width: 960px;
     margin: 0 auto;
+    
 }
 
 .sum{
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
+    
+
 }
 
 
@@ -23,7 +32,8 @@ header .center-box{
 .wrap a {
     text-decoration: none;
     font-weight: bold;
-    font-family: Helvetica Neue,sans-serif;
+    font-family: sans-serif;
+    color: white;
 
 }
 
@@ -36,7 +46,82 @@ header .center-box{
     border-style: none;
     padding:  5px 33px;
     box-sizing: border-box;
+}
+.top-text{
+    text-align: center;
+    margin-top: 50px;
 
-    
+}
+.top-text h1{
+    font-size: 28px;
+    color: #f2f2f2;
+    font-weight: 400;
+    margin-bottom: 70px;
+    line-height: 40px;
+    text-shadow: #e6e6e6;
 }
 
+.top-text input{
+    width: 550px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 10px 10px 10px 40px;
+    box-sizing: border-box;
+    background-image: url(../images/glass.png);
+    background-repeat: no-repeat;
+    background-size: 25px 25px ;
+    background-position: 8px ;
+    font-size: 16px;
+
+}
+
+.center-box2{
+    width: 960px;
+    margin: 60px auto;
+}
+.center-box2 a{
+    text-decoration: none;
+}
+.frount{
+    color: #404040;
+}
+.bottom-line{
+    margin-top: 20px;
+
+}
+
+.bottom-line li{
+    border-bottom: 1px solid #d9d9d9;
+    padding: 15px 15px 15px 0;
+    list-style: none;
+}
+
+.bottom-line li:first-child{
+    border-top: 1px solid #ccc;
+}
+
+.bottom-line li a{
+    color:   #404040;
+}
+
+.blue-box{
+    display: flex;
+    margin-top: 15px;
+}
+.blue-box li{
+    list-style: none;
+    width: 33.33%;
+    border: 1px solid #1E91D9;
+
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+.blue-box li a{
+    color: #1E91D9;
+    font-weight: bold;
+    font-size: 16px;
+}
