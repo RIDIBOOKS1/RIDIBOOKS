@@ -1,11 +1,19 @@
 package kr.ridibooks.model;
 
 public class MemberMarketingVO {
+	private int memberInfo_num;
 	private String subEmail;
-	private String memberInfoId;
 	private int emailagree;
 	private int appagree;
 	private int appnightagree;
+
+	public int getMemberInfo_num() {
+		return memberInfo_num;
+	}
+
+	public void setMemberInfo_num(int memberInfo_num) {
+		this.memberInfo_num = memberInfo_num;
+	}
 
 	public String getSubEmail() {
 		return subEmail;
@@ -17,14 +25,6 @@ public class MemberMarketingVO {
 
 	public int getEmailagree() {
 		return emailagree;
-	}
-
-	public String getMemberInfoId() {
-		return memberInfoId;
-	}
-
-	public void setMemberInfoId(String memberInfoId) {
-		this.memberInfoId = memberInfoId;
 	}
 
 	public void setEmailagree(int emailagree) {
@@ -47,5 +47,4 @@ public class MemberMarketingVO {
 		this.appnightagree = appnightagree;
 	}
 
-	
 }

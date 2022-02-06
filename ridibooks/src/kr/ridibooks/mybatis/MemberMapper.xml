@@ -21,13 +21,13 @@
     </insert>
     
     <insert id="memberMarketingInsert" parameterType="memberMarketingVO">
-        insert into marketinginfo(subEmail, emailagree, appagree, appnightagree, memberInfoId)
+        insert into marketinginfo(memberInfo_num, subEmail, emailagree, appagree, appnightagree)
         values(
+        #{memberInfo_num},
         #{subEmail},
         #{emailagree},
         #{appagree},
-        #{appnightagree},
-        #{memberInfoId}
+        #{appnightagree}
         )       
     </insert>
     
@@ -49,6 +49,10 @@
     
      <select id="memberEmailDoublecheck" resultType="String" parameterType="String">
         select email from memberInfo where email=#{email}        
+    </select>
+    
+    <select id="idReturnPk" resultType="int" parameterType="String">
+        select member_num from memberInfo where id=#{id}        
     </select>
     
      <delete id="memberDelete" parameterType="String">  
@@ -73,7 +77,7 @@
          emailagree=#{emailagree},
          appagree=#{appagree},
          appnightagree=#{appnightagree}
-         where memberInfoId=#{memberInfoId}	 
+         where memberInfo_num=#{memberInfo_num}	 
     </update>
     
 </mapper>

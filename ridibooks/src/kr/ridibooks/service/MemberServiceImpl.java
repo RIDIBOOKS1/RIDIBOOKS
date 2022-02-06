@@ -63,4 +63,9 @@ public class MemberServiceImpl implements MemberService {
 		return dao.updateMarketing(mVo);
 	}
 
+	@Override
+	public int idReturnPk(String id) {
+		return dao.idReturnPk(id);
+	}
+
 }

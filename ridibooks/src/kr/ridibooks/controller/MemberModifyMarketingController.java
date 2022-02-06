@@ -42,8 +42,13 @@ public class MemberModifyMarketingController implements Controller {
 			return null;
 		}
 		
+		// 로그인한 사용자의 memberInfo pk 값
+		int memberPK = service.idReturnPk(id);
+		System.out.println(memberPK);
+		
 		// 구독 받을 이메일 주소
 		String emailToSub = request.getParameter("emailToSub");
+		System.out.println(emailToSub);
 		// 이메일 구독 체크박스
 		String emailSubStr = request.getParameter("emailSub");
 		System.out.println(emailSubStr);
@@ -51,7 +56,7 @@ public class MemberModifyMarketingController implements Controller {
 		String appPushStr = request.getParameter("appPush");
 		System.out.println(appPushStr);
 		// 야간 앱 푸시 수신 여부
-		String nightAppPushStr = request.getParameter("appPush");
+		String nightAppPushStr = request.getParameter("nightAppPush");
 		System.out.println(emailSubStr);
 		
 		
@@ -63,7 +68,6 @@ public class MemberModifyMarketingController implements Controller {
 				return null;
 			}
 		}
-		
 		
 
 		int emailSub;
@@ -88,17 +92,20 @@ public class MemberModifyMarketingController implements Controller {
 			nightAppPush= 0;
 		}
 		
-		
 
 		MemberMarketingVO marketingVO = new MemberMarketingVO();
+		System.out.println("emailToSub!=null = " + emailToSub != null);
+		System.out.println("!emailToSub.isEmpty() = " + !emailToSub.isEmpty());
 		if(emailToSub != null && !emailToSub.isEmpty()) {
 			marketingVO.setSubEmail(emailToSub);
+		} else {
+			marketingVO.setSubEmail(email);
 		}
-		marketingVO.setSubEmail(email);
+		
+		marketingVO.setMemberInfo_num(memberPK);
 		marketingVO.setEmailagree(emailSub);
 		marketingVO.setAppagree(appPush);
 		marketingVO.setAppnightagree(nightAppPush);
-		marketingVO.setMemberInfoId(id);
 		
 		int cnt = service.modifyMarketing(marketingVO);
 		
