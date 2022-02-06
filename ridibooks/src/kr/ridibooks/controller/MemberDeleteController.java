@@ -25,7 +25,7 @@ public class MemberDeleteController implements Controller {
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		
-		int cnt = service.withdrawal(id);
+		int cnt = service.withdrawaldel(id);
 		
 		String nextPage=null;
 		

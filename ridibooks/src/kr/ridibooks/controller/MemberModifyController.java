@@ -44,16 +44,19 @@ public class MemberModifyController implements Controller {
 		// 입력된 pw 값
 		String pw = request.getParameter("pw");
 		
+		// 비밀번호 입력 안했으면 응답코드 400
 		if(pw == null || pw.isEmpty()) {
 			response.setStatus(400);
 			System.out.println("비밀번호 입력 안함");
 			return null;
 		}
 		
+		// 회원 로그인한 상태에서 회원 정보와 일치하는 비밀번호 입력
 		if(foundVO.getPw().equals(pw)) {
 			response.setStatus(200);
 			System.out.println("회원 로그인한 상태에서 회원 정보와 일치하는 비밀번호 입력");
 		} else {
+			// 회원정보의 비밀번호와 입력한 비밀번호의 불일치
 			response.setStatus(404);
 			System.out.println("회원정보의 비밀번호와 입력한 비밀번호의 불일치");
 			return null;

@@ -3,6 +3,7 @@ package kr.ridibooks.service;
 import kr.ridibooks.model.MemberDAO;
 import kr.ridibooks.model.MemberMarketingVO;
 import kr.ridibooks.model.MemberVO;
+import kr.ridibooks.model.WithdrawalVO;
 
 public class MemberServiceImpl implements MemberService {
 
@@ -39,7 +40,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public int withdrawal(String id) {
+	public int withdrawaldel(String id) {
 		return dao.memberDelete(id);
 	}
 
@@ -66,6 +67,16 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int idReturnPk(String id) {
 		return dao.idReturnPk(id);
+	}
+
+	@Override
+	public int withdrawal(WithdrawalVO wVo) {
+		return dao.withdrawalInsert(wVo);
+	}
+
+	@Override
+	public int modifyIsMember(MemberVO vo) {
+		return dao.updateIsMember(vo);
 	}
 
 }

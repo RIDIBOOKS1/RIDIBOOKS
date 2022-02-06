@@ -40,6 +40,13 @@ public class MemberLoginController implements Controller {
 		// 입력된 id, pw와 일치하는 회원 찾기
 		MemberVO loginVO = service.login(vo);
 		
+		// 탈퇴한 회원이 로그인 시도
+		if(loginVO.getIsMember() == 1) {
+			response.setStatus(404);
+			System.out.println("탈퇴한 회원이 로그인 시도");
+			return null;
+		}
+		
 		
 		// 이미 로그인 되어 있을 경우
 		if(request.getSession().getAttribute("id") != null) {
@@ -63,6 +70,7 @@ public class MemberLoginController implements Controller {
 			return null;
 		}
 		
+		// 일치하는 회원 정보가 있을 떄는 로그인 성공
 		if(loginVO != null) {
 			// 성공
 			HttpSession session = request.getSession();

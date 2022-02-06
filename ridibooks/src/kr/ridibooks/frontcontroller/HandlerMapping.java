@@ -2,7 +2,6 @@ package kr.ridibooks.frontcontroller;
 
 import java.util.HashMap;
 import kr.ridibooks.controller.Controller;
-import kr.ridibooks.controller.MemberDeleteController;
 import kr.ridibooks.controller.MemberFindPasswordController;
 import kr.ridibooks.controller.MemberFindByIdController;
 import kr.ridibooks.controller.MemberFindByIdPageController;
@@ -15,6 +14,7 @@ import kr.ridibooks.controller.MemberModifyMarketingController;
 import kr.ridibooks.controller.MemberModifyPasswordController;
 import kr.ridibooks.controller.MemberResetPasswordController;
 import kr.ridibooks.controller.MemberSignUpPageController;
+import kr.ridibooks.controller.MemberWithdrawalController;
 import kr.ridibooks.controller.TestController;
 import kr.ridibooks.controller.TestFindPasswordController;
 import kr.ridibooks.controller.TestLoginPageController;
@@ -22,6 +22,7 @@ import kr.ridibooks.controller.TestModifyController;
 import kr.ridibooks.controller.TestModifyEmailPageController;
 import kr.ridibooks.controller.TestModifyMarketingPageController;
 import kr.ridibooks.controller.TestModifyPwPageController;
+import kr.ridibooks.controller.TestWithdrawalPageController;
 
 
 public class HandlerMapping {
@@ -55,6 +56,9 @@ public class HandlerMapping {
 	  
 	  // 회원정보 변경(마케팅 정보 수신관리) 테스트 페이지
 	  mappings.put("/account/modifyMarketingpage.do", new TestModifyMarketingPageController());
+	  
+	  // 회원 탈퇴 테스트 페이지
+	  mappings.put("/account/withdrawalpage.do", new TestWithdrawalPageController());
 	  
 	  // 성공했을 떄 이동하는 테스트 페이지
 	  mappings.put("/success.do", new TestController());
@@ -91,8 +95,8 @@ public class HandlerMapping {
 	  // 회원정보 수정 -> 마케팅정보수신관리
 	  mappings.put("/account/modify/marketing.do", new MemberModifyMarketingController());
 	  
-	  // 회원탈퇴 컨트롤러 -> 추후 delete가 아니라 로그 정보 남기게 수정해야 함
-	  mappings.put("/account/leave.do", new MemberDeleteController());
+	  // 회원탈퇴 컨트롤러 
+	  mappings.put("/account/leave.do", new MemberWithdrawalController());
 	  
   }
   
