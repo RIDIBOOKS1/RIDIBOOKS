@@ -12,6 +12,7 @@ public class MemberVO {
 	private int event;
 	private int info;
 	private int personal;
+	private int ismember;
 
 	public int getMember_num() {
 		return member_num;
@@ -101,12 +102,11 @@ public class MemberVO {
 		this.personal = personal;
 	}
 
-	@Override
-	public String toString() {
-		return "MemberVO [member_num=" + member_num + ", id=" + id + ", pw=" + pw + ", email=" + email + ", name="
-				+ name + ", birthdate=" + birthdate + ", gender=" + gender + ", agree=" + agree + ", event=" + event
-				+ ", info=" + info + ", personal=" + personal + "]";
+	public int getIsMember() {
+		return ismember;
 	}
 
-	
+	public void setIsMember(int ismember) {
+		this.ismember = ismember;
+	}
 }

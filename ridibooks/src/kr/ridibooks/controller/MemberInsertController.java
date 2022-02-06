@@ -199,6 +199,7 @@ public class MemberInsertController implements Controller{
 		vo.setEvent(event);
 		vo.setInfo(info);
 		vo.setPersonal(personal);
+		vo.setIsMember(0);
 		
 		
 		// insert 성공시 양수 반환
@@ -207,6 +208,7 @@ public class MemberInsertController implements Controller{
 	    
 	    if(cnt > 0) {
 	    	// 가입성공
+	    	response.setStatus(201);
 	    	nextPage="redirect:"+ctx+"/success.do";
 	    }else {
 	    	// 가입실패-> 예외객체를 만들어서 WAS에게 던지기

@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import kr.ridibooks.controller.MemberWithdrawalController;
+
 public class MemberDAO {
 	private static SqlSessionFactory sqlSessionFactory; 
 	 
@@ -124,7 +126,7 @@ public class MemberDAO {
 			return emailDouble; // YES(Áßº¹), NO(Áßº¹¾Æ´Ô)
 		}
 	   
-	   // È¸¿øÅ»Åð
+	   // È¸¿øÅ»Åð(delete -> »ç¿ë¾ÈÇÔ)
 	   public int memberDelete(String id) {
 		   SqlSession session=sqlSessionFactory.openSession();
 		   int cnt=session.delete("memberDelete", id);
@@ -133,5 +135,21 @@ public class MemberDAO {
 		   return cnt;
 	   }
 	   
+	   // È¸¿øÅ»Åð
+	   public int withdrawalInsert(WithdrawalVO wVo) {
+			SqlSession session = sqlSessionFactory.openSession();
+			int cnt = session.insert("withdrawalInsert", wVo);
+			session.commit();
+			session.close(); // ¹Ý³³
+			return cnt;
+		}
 	   
+	   // È¸¿ø Å»Åð ÈÄ È¸¿ø Á¤º¸ ismember 1·Î °ª ¹Ù²Ù±â
+	   public int updateIsMember(MemberVO vo) {
+			 SqlSession session=sqlSessionFactory.openSession();
+			 int cnt=session.update("updateIsMember", vo);
+			 session.commit();
+			 session.close();
+			 return cnt;
+		}
 }

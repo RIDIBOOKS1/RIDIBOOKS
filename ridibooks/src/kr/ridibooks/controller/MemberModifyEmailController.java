@@ -35,7 +35,7 @@ public class MemberModifyEmailController implements Controller {
 		idEmailVO.setEmail(email);
 		MemberVO foundVO = service.idEmailReturnVO(idEmailVO);
 		
-		// 로그인안한 상태에서 비밀번호 변경하려고 함
+		// 로그인안한 상태에서 이메일을 변경하려고 함
 		if(foundVO == null) {
 			System.out.println("로그인 되어 있지 않음");
 			response.setStatus(404);
