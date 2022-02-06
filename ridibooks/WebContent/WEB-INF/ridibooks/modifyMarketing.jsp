@@ -10,8 +10,10 @@
 	<input type="hidden" name="id" value="${vo.id }">
 	<input type="hidden" name="email" value="${vo.email }">
 	<div style="margin: 10px">
+	<label for="emailwrite">
+		<input id="emailwrite" type="checkbox" name="emailSub" value="agree"> 이메일 구독
+	</label>
 	<label for="emailmarketing">
-		<input id="emailmarketing" type="checkbox" name="emailSub" value="agree"> 이메일 구독
 		<input id="emailmarketing" type="text" name="emailToSub">
 	</label>
 	</div>
@@ -27,7 +29,6 @@
 	</div>
 	<div>
 	<input type="submit" value="마케팅 정보 변경하러 가기">
-	</div>
 	</div>
 </form>
 </body>

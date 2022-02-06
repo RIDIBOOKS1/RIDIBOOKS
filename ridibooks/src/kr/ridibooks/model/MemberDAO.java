@@ -29,7 +29,15 @@ public class MemberDAO {
 			return cnt;
 		}
 		
-		// 마케팅 정보 insert
+		// memberInfo: id로 pk 값 리턴
+		public int idReturnPk(String id) {
+			SqlSession session=sqlSessionFactory.openSession();
+			int pk = session.selectOne("idReturnPk", id);// id or null
+			session.close();
+			return pk;
+		}
+		
+		// 마케팅 정보 insert, 회원 가입할 때
 		public int memberMarketingInsert(MemberMarketingVO mVo) {
 			SqlSession session = sqlSessionFactory.openSession();
 			int cnt = session.insert("memberMarketingInsert", mVo);
@@ -54,6 +62,7 @@ public class MemberDAO {
 			 return selectedVo;
 		}
 		
+		
 		// id와 이메일 값으로 MemberVO 를 리턴해주는 메서드
 		public MemberVO idEmailReturnVO(MemberVO vo) {
 			 SqlSession session=sqlSessionFactory.openSession();
@@ -61,7 +70,6 @@ public class MemberDAO {
 			 session.close();
 			 return selectedVo;
 		}
-		
 		
 		// 변경 문 하나로 합치기
 		// 비밀번호 변경
@@ -100,6 +108,7 @@ public class MemberDAO {
 		   if(dbId!=null) {
 			   idDouble="YES";
 		   }
+		   session.close();
 		   return idDouble; // YES(중복), NO(중복아님)
 	   }
 	   
@@ -111,6 +120,7 @@ public class MemberDAO {
 			if(dbEmail!=null) {
 				emailDouble="YES";
 			}
+			session.close();
 			return emailDouble; // YES(중복), NO(중복아님)
 		}
 	   

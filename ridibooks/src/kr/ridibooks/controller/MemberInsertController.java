@@ -211,12 +211,17 @@ public class MemberInsertController implements Controller{
 	    }else {
 	    	// 가입실패-> 예외객체를 만들어서 WAS에게 던지기
 	    	throw new ServletException("not insert");	    	
-	    }	
+	    }
+	    
+	    // memberVO에 id 값으로 pk 값 반환하기
+	    int memberInfoPk = service.idReturnPk(id);
+	    System.out.println(memberInfoPk);
+	    
 	    
 	    // 마케팅 정보 -> 기본으로 세팅
 	    MemberMarketingVO marketingVO = new MemberMarketingVO();
+	    marketingVO.setMemberInfo_num(memberInfoPk);
 	    marketingVO.setSubEmail(email);
-	    marketingVO.setMemberInfoId(id);
 	    marketingVO.setEmailagree(0);
 	    marketingVO.setAppagree(0);
 	    marketingVO.setAppnightagree(1);
