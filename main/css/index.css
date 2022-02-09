@@ -215,8 +215,8 @@ button{
 .slick-prev{
     background-color: white;
     box-shadow: 1px 1px 1px 1px  #bfbfbf;
-    top: 40%;
-    right: 69%;
+    top: 30%;
+    right: 59%;
     z-index: 999;
 }
 .slick-prev:hover{
