@@ -84,6 +84,9 @@ header{
 .center-box2 a{
     text-decoration: none;
 }
+.center-box2 h3{
+    color: #404040;
+}
 .frount{
     color: #404040;
 }
@@ -115,7 +118,7 @@ header{
     width: 33.33%;
     border: 1px solid #1E91D9;
 
-    margin: 10px;
+    margin-right: 10px;
     text-align: center;
     padding: 20px;
     border-radius: 5px;
@@ -124,4 +127,132 @@ header{
     color: #1E91D9;
     font-weight: bold;
     font-size: 16px;
+}
+
+.star{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    font-size: 35px;
+    font-weight: bold;
+
+}
+.star li{
+    list-style: none;
+    border: 1px solid  #1E91D9;
+    border-radius: 5px;
+    width: 33.33%;
+    padding: 30px;
+    text-align: center;
+    margin-right: 10px;
+ 
+
+
+}
+.star li a{
+    color: #222;
+}
+.blue-faq{
+    color: #1E91D9;
+    font-size: 17px;
+}
+.question{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.question li {
+    list-style: none;
+    width: 33.33%;
+    margin-right: 10px;
+}
+
+.question p {
+    border-top: 1px solid #e6e6e6;
+    margin-top: 15px;
+    padding-top: 15px;
+
+}
+.baro {
+    padding: 10px;
+    background-color: #1E91D9;
+    border-radius: 50px;
+    font-size: 13px;
+    width: 80px;
+    margin-top: 15px;
+    text-align: center;
+}
+.baro a{
+    color: white;
+}
+.oru{
+    color: #222;
+}
+.book{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.book li{
+    list-style: none;
+    width: 23%;
+    margin-right: 2%;
+    border: 1px solid #1E91D9;
+    border-radius: 5px;
+    padding: 20px 20px 30px 20px;
+
+}
+.book li a {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #1E91D9;
+    font-weight: bold;
+}
+.book li a img{
+    margin: auto;
+
+}
+.content2{
+    display: flex;
+    justify-content: flex-start;
+}
+.customer1{
+    display: flex;
+    border: 1px solid #1E91D9;
+    padding: 15px;
+    margin-right: 20px;
+
+
+}
+.customer1 li {
+    list-style: none;
+    text-align: center;
+    padding-right: 70px;
+    
+}
+.customer1 li a{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.customer2{
+    display: flex;
+    border: 1px solid #1E91D9;
+    padding: 15px;
+
+
+}
+.customer2 li {
+    list-style: none;
+    text-align: center;
+    padding-right: 70px;
+
+    
+}
+.customer2 li a{
+    display: flex;
+    flex-direction: column;
+
 }
