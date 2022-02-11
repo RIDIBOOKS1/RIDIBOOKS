@@ -435,3 +435,46 @@ footer{
     font-size: 10px;
     padding-right: 5px;
 }
+
+@media screen and (max-width: 768px) {
+    .blue-box{
+        display: flex;
+        flex-direction: column;  
+    }
+    .blue-box li {
+      margin-bottom: 10px;
+      width: 425px;
+      margin-left: 10px;
+    }
+    .star{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .star li{
+        width: 410px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+    }
+
+    .question{
+        display: flex;
+        flex-direction: column;
+    }
+    .question li{
+        width: 470px;
+        text-align: left;
+        margin-left: 15px;
+    }
+    .baro{
+        margin-bottom: 20px;
+    }
+    .book{
+        display: flex;
+        flex: 1 0 50%;
+    }
+    .book li {
+        flex: 1 0 25%;
+    }
+
+}
