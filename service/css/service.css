@@ -228,12 +228,14 @@ header{
 .customer1 li {
     list-style: none;
     text-align: center;
-    padding-right: 70px;
+    padding: 20px;
     
 }
+
 .customer1 li a{
     display: flex;
     flex-direction: column;
+
 
 }
 
@@ -244,11 +246,12 @@ header{
 
 
 }
+
 .customer2 li {
     list-style: none;
     text-align: center;
     padding-right: 70px;
-
+    
     
 }
 .customer2 li a{
